@@ -1,0 +1,13 @@
+html * {
+	font-family: 'Segoe UI', 'Segoe UI Web Semilight', 'Segoe UI Semilight',
+		'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', 'Tahoma', 'Arial',
+		'sans-serif';
+}
+body {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+	box-sizing: border-box;
+}

@@ -1,0 +1,39 @@
+.page {
+	padding: 30px;
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+}
+
+.content {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+.pivotContent {
+	display: flex;
+	flex-direction: column;
+	padding: 40px 0;
+	align-items: center;
+}
+
+.requestSection {
+	margin-top: 15px;
+	padding: 15px;
+}
+
+.requestSectionTitle {
+	font-size: 24px;
+	font-weight: 300;
+	margin-bottom: 30px;
+}
+
+.requestSectionHeader {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.headerIcon {
+	cursor: default;
+}
