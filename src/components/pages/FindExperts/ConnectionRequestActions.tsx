@@ -1,9 +1,10 @@
 import React, { memo, useState, useCallback } from 'react'
 import styles from './ConnectionRequestActions.module.scss'
-import { PrimaryButton } from 'office-ui-fabric-react'
+// import { PrimaryButton } from 'office-ui-fabric-react'
 import { ConnectionRequestModal } from '../../EmployeeCard/ConnectionReqestModal'
 import { useConnectionRequestHandler } from '../../../hooks/useConnectionRequestHandler'
 import { Employee } from '../../../api'
+import { PrimaryButton } from 'msteams-ui-components-react'
 
 export interface ConnectionRequestActionsProps {
 	employees: Employee[]

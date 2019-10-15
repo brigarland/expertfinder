@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"@microsoft/teams-js": "^1.5.2",
 		"@types/classnames": "^2.2.9",
 		"@types/lodash": "^4.14.136",
 		"@types/node": "^12.6.8",
@@ -23,6 +24,8 @@
 		"humanhash": "^1.0.4",
 		"install": "^0.13.0",
 		"lodash": "^4.17.15",
+		"msteams-ui-components-react": "^0.8.4",
+		"msteams-ui-icons-react": "^0.4.2",
 		"node-sass": "^4.12.0",
 		"npm": "^6.10.1",
 		"office-ui-fabric-react": "^7.13.0",
@@ -39,7 +42,8 @@
 		"redux": "^4.0.4",
 		"redux-actions": "^2.6.5",
 		"redux-logger": "^3.0.6",
-		"redux-thunk": "^2.3.0"
+		"redux-thunk": "^2.3.0",
+		"typestyle": "^2.0.4"
 	},
 	"scripts": {
 		"start": "react-scripts start",

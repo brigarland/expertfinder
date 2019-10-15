@@ -11,6 +11,7 @@ export const Routes: React.FC = memo(() => (
 	<Suspense fallback={<div></div>}>
 		<Route path="/" exact component={Home} />
 		<Route path="/experts" component={FindExperts} />
+		<Route path="/influencers" component={FindExperts} />
 		<Route path="/kudos" component={Kudos} />
 		<Route path="/skills-marketplace" component={SkillsMarketplace} />
 		<Route path="/profile" component={Profile} />

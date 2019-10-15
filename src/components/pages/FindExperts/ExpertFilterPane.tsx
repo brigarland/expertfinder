@@ -11,6 +11,7 @@ import classnames from 'classnames'
 import styles from './ExpertFilterPane.module.scss'
 import { ExpandCollapsePane } from '../../ExpandCollapsePane'
 import { ConnectionRequestActions } from './ConnectionRequestActions'
+// import { Input } from 'msteams-ui-components-react'
 
 export interface ExpertFilterPaneProps {
 	selectedEmployees: Employee[]
@@ -42,8 +43,8 @@ export const ExpertFilterPane: React.FC<ExpertFilterPaneProps> = memo(
 		])
 
 		const handleOrganizationChanged = useCallback(
-			(e, f) => {
-				setOrganization(f)
+			ev => {
+				setOrganization(ev.target.value)
 				markInteracted()
 			},
 			[setOrganization, markInteracted],
@@ -65,6 +66,10 @@ export const ExpertFilterPane: React.FC<ExpertFilterPaneProps> = memo(
 			[setSelectedProjects, markInteracted],
 		)
 
+		// const handleProjectsChangedRef = (ev: any) => {
+		// 	console.log(ev.target.value)
+		// }
+
 		return (
 			<div className={classnames(styles.container, 'ms-depth-8')}>
 				<ExpandCollapsePane title="SearchCriteria">
@@ -75,6 +80,13 @@ export const ExpertFilterPane: React.FC<ExpertFilterPaneProps> = memo(
 							onChange={handleOrganizationChanged}
 						/>
 					</div>
+					{/* <div className={styles.filterSection}>
+						<Input
+							label="Organization"
+							value={organization}
+							onChange={handleOrganizationChanged}
+						/>
+					</div> */}
 					<div className={styles.tagsContainer}>
 						<div className={styles.filterSection}>
 							<Label>Relevant Skills</Label>
