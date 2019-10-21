@@ -84,5 +84,5 @@
 		"semi": false,
 		"useTabs": true
 	},
-	"proxy": "https://empexpapi.azurewebsites.net"
+	"proxy": "http://localhost:2597"
 }

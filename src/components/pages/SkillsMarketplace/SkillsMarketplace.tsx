@@ -1,7 +1,14 @@
 import React, { useState, useCallback, memo, useEffect } from 'react'
-import { ContentSection, SidePanel, PageSurface, Pill } from '../../Shared'
+import {
+	ContentSection,
+	SidePanel,
+	PageSurface,
+	Pill,
+	PillIcon,
+	PillFill,
+} from '../../Shared'
 import { Input } from 'msteams-ui-components-react'
-import { useSkillsSearch, useTripwire } from '../../../hooks'
+import { useSkillsSearch, useTripwire, useUserSkills } from '../../../hooks'
 import styles from './SkillsMarketplace.module.scss'
 
 export const SkillsMarketplace: React.FC = memo(() => {
@@ -9,8 +16,14 @@ export const SkillsMarketplace: React.FC = memo(() => {
 		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
 
 	const [interacted, markInteracted] = useTripwire()
+	const [userSkills, setUserSkills] = useState<string[]>([])
 	const [skillsSearchValue, setSkillsSearchValue] = useState<string>('')
 	const [skillsSearchResults, setSkillsSearchResults] = useState<string[]>([])
+
+	useEffect(() => {
+		const v = useUserSkills()
+		setUserSkills(v)
+	}, [setUserSkills])
 
 	useEffect(() => {
 		if (interacted) {
@@ -40,11 +53,17 @@ export const SkillsMarketplace: React.FC = memo(() => {
 				</div>
 				<div className={styles.searchResultsCnt}>
 					{skillsSearchResults.map(f => (
-						<Pill text={f} />
+						<Pill text={f} icon={PillIcon.add} fill={PillFill.border} />
 					))}
 				</div>
 			</SidePanel>
-			<ContentSection headerText="Your Skills"></ContentSection>
+			<ContentSection headerText="Your Skills">
+				<div className={styles.searchResultsCnt}>
+					{userSkills.map(f => (
+						<Pill text={f} />
+					))}
+				</div>
+			</ContentSection>
 		</PageSurface>
 	)
 })
