@@ -11,6 +11,8 @@ import classnames from 'classnames'
 import styles from './ExpertFilterPane.module.scss'
 import { ExpandCollapsePane } from '../../ExpandCollapsePane'
 import { ConnectionRequestActions } from './ConnectionRequestActions'
+import { Input, Dropdown } from 'msteams-ui-components-react'
+import { SidePanel, TagPicker } from '../../Shared'
 // import { Input } from 'msteams-ui-components-react'
 
 export interface ExpertFilterPaneProps {
@@ -22,6 +24,7 @@ export const ExpertFilterPane: React.FC<ExpertFilterPaneProps> = memo(
 	({ onFilterChange, selectedEmployees }) => {
 		const projects = useProjects()
 		const skills = useSkills()
+		// const skillsOptions = []
 
 		const [interacted, markInteracted] = useTripwire()
 		const [organization, setOrganization] = useState<string | undefined>()
@@ -66,50 +69,33 @@ export const ExpertFilterPane: React.FC<ExpertFilterPaneProps> = memo(
 			[setSelectedProjects, markInteracted],
 		)
 
-		// const handleProjectsChangedRef = (ev: any) => {
-		// 	console.log(ev.target.value)
-		// }
-
 		return (
-			<div className={classnames(styles.container, 'ms-depth-8')}>
-				<ExpandCollapsePane title="SearchCriteria">
-					<div className={styles.filterSection}>
-						<TextField
-							label="Organization"
-							value={organization}
-							onChange={handleOrganizationChanged}
-						/>
-					</div>
-					{/* <div className={styles.filterSection}>
-						<Input
-							label="Organization"
-							value={organization}
-							onChange={handleOrganizationChanged}
-						/>
-					</div> */}
-					<div className={styles.tagsContainer}>
-						<div className={styles.filterSection}>
-							<Label>Relevant Skills</Label>
-							<CategoryFilter
-								categories={skills}
-								selectedCategories={selectedSkills}
-								onSelectionChanged={handleSkillsChanged}
-							/>
-						</div>
-						<div className={styles.filterSection}>
-							<Label>Project Involvement</Label>
-							<CategoryFilter
-								categories={projects}
-								selectedCategories={selectedProjects}
-								onSelectionChanged={handleProjectsChanged}
-							/>
-						</div>
-					</div>
-				</ExpandCollapsePane>
-				<div className={styles.actionPane}>
-					<ConnectionRequestActions employees={selectedEmployees} />
+			<SidePanel headerText="Expert Finder">
+				<div className="TextFieldCnt">
+					<Input
+						label="Organization"
+						value={organization}
+						onChange={handleOrganizationChanged}
+					/>
 				</div>
-			</div>
+				<div className={styles.tagPickerCnt}>
+					<TagPicker
+						items={skills}
+						itemsGroupTitle="skills"
+						label="Relevant Skills"
+						selectedItems={selectedSkills}
+						onSelectionChanged={handleSkillsChanged}
+					/>
+				</div>
+				<div className={styles.tagPickerCnt}>
+					<TagPicker
+						items={projects}
+						label="Project Involvement"
+						selectedItems={selectedProjects}
+						onSelectionChanged={handleProjectsChanged}
+					/>
+				</div>
+			</SidePanel>
 		)
 	},
 )

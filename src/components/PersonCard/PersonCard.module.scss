@@ -1,0 +1,32 @@
+.personCardRoot {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	border: 1px solid #eee;
+	background-color: #fff;
+	flex: 0 0 300px;
+	border-top: 3px solid #6264a7;
+	margin: 0 16px 16px 0;
+}
+.personCardMain {
+	padding: 10px 15px;
+	flex: 1;
+}
+.personCardFooter {
+	flex: 1;
+	position: relative;
+	min-height: 35px;
+}
+.title {
+	color: #4e586a;
+	font-weight: 600;
+}
+.checkBoxCnt {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: #6264a7;
+	border-radius: 6px 0 0;
+	padding: 6px 12px 6px 17px;
+	// max-width: 200px;
+}

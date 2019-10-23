@@ -2,14 +2,14 @@ import React, { useMemo, useCallback, memo } from 'react'
 import { TagPicker, ITag } from 'office-ui-fabric-react'
 import styles from './CategoryFilter.module.scss'
 
-export interface CategoryFilterProps {
+export interface ICategoryFilterProps {
 	categories: string[]
 	selectedCategories: string[]
 	itemLimit?: number
 	onSelectionChanged: (selection: string[]) => void
 }
 
-export const CategoryFilter: React.FC<CategoryFilterProps> = memo(
+export const CategoryFilter: React.FC<ICategoryFilterProps> = memo(
 	({ categories, selectedCategories, itemLimit = 5, onSelectionChanged }) => {
 		const suggestions = useMemo<ITag[]>(() => categories.map(toTag), [
 			categories,

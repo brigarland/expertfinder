@@ -1,0 +1,33 @@
+.categoryPickerCnt {
+	width: 100%;
+}
+
+/**
+ * old
+ */
+
+.row {
+	display: flex;
+	flex-direction: row;
+}
+
+.rowRight {
+	@extend .row;
+	justify-content: flex-end;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.comboBox {
+	margin-right: 5px;
+}
+
+.comboBoxContainer {
+	display: flex;
+	flex-direction: row;
+	margin-right: 5px;
+}

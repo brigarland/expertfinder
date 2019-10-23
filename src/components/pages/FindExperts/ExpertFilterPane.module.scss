@@ -1,44 +1,50 @@
-.container {
-	padding: 40px;
+.tagPickerCnt {
+	margin-top: 8px;
 }
 
-.header {
-	display: flex;
-	justify-content: space-between;
-}
+// old
 
-.headerText {
-	text-align: left;
-	font-size: 22px;
-	margin: 8px;
-	margin-left: 15px;
-	font-weight: 200;
-}
+// .container {
+// 	padding: 40px;
+// }
 
-.headerIcon {
-	margin-right: 10px;
-	margin-top: 10px;
-	font-size: 30px;
-	cursor: default;
-}
+// .header {
+// 	display: flex;
+// 	justify-content: space-between;
+// }
 
-.filterSection {
-	flex: 1;
-	padding: 15px;
-}
+// .headerText {
+// 	text-align: left;
+// 	font-size: 22px;
+// 	margin: 8px;
+// 	margin-left: 15px;
+// 	font-weight: 200;
+// }
 
-.tagsContainer {
-	display: flex;
-	flex-direction: row;
-	flex: 1;
-}
+// .headerIcon {
+// 	margin-right: 10px;
+// 	margin-top: 10px;
+// 	font-size: 30px;
+// 	cursor: default;
+// }
 
-.actionPane {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-}
+// // .filterSection {
+// // flex: 1;
+// // padding: 15px;
+// // }
 
-.actionButton {
-	margin-right: 5px;
-}
+// .tagsContainer {
+// 	display: flex;
+// 	flex-direction: row;
+// 	flex: 1;
+// }
+
+// .actionPane {
+// 	display: flex;
+// 	flex-direction: row;
+// 	justify-content: flex-end;
+// }
+
+// .actionButton {
+// 	margin-right: 5px;
+// }
