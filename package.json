@@ -43,6 +43,7 @@
 		"redux-actions": "^2.6.5",
 		"redux-logger": "^3.0.6",
 		"redux-thunk": "^2.3.0",
+		"svg-react-loader": "^0.4.6",
 		"typestyle": "^2.0.4"
 	},
 	"scripts": {

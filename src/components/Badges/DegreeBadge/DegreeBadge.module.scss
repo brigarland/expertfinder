@@ -1,0 +1,16 @@
+@import '../../../styles/ColorPalette.scss';
+
+.degreeBadgeRoot {
+	display: table;
+	// display: inline-block;
+	border: 2px solid $brand00;
+	border-radius: 4px;
+	padding: 1px 4px 2px 3px;
+}
+.valueCnt {
+	color: $brand00;
+	font-weight: 600;
+	sup {
+		font-size: 8px;
+	}
+}

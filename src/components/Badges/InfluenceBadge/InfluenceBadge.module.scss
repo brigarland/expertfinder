@@ -1,0 +1,25 @@
+@import '../../../styles/ColorPalette.scss';
+
+.influenceBadgeRoot {
+	position: relative;
+	display: table;
+	// display: inline-block;
+	// border: 2px solid $brand00;
+	background-color: $brand00;
+	border-radius: 4px;
+	padding: 1px 4px 2px 3px;
+}
+.IconCnt {
+	// display: inline-block;
+	position: absolute;
+	top: 6px;
+	left: 5px;
+}
+.valueCnt {
+	display: inline-block;
+	// color: $brand00;
+	font-weight: 600;
+	color: $white;
+	line-height: 32px;
+	padding-left: 35px;
+}

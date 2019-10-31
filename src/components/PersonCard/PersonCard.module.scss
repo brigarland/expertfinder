@@ -1,32 +1,52 @@
+@import '../../styles/ColorPalette.scss';
+
 .personCardRoot {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
-	border: 1px solid #eee;
-	background-color: #fff;
+	border: 1px solid $gray09;
+	background-color: $white;
 	flex: 0 0 300px;
-	border-top: 3px solid #6264a7;
+	border-top: 3px solid $brand00;
 	margin: 0 16px 16px 0;
 }
 .personCardMain {
-	padding: 10px 15px;
+	position: relative;
+	padding: 10px 70px 14px 15px;
 	flex: 1;
 }
 .personCardFooter {
-	flex: 1;
 	position: relative;
+	flex: 0;
 	min-height: 35px;
+	background-color: $brand00;
 }
 .title {
 	color: #4e586a;
 	font-weight: 600;
+	span {
+		display: block;
+		color: $gray04;
+		font-size: 12px;
+	}
 }
 .checkBoxCnt {
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	background-color: #6264a7;
-	border-radius: 6px 0 0;
-	padding: 6px 12px 6px 17px;
+	// background-color: $brand00;
+	// border-radius: 6px 0 0;
+	padding: 6px 7px 8px 17px;
 	// max-width: 200px;
+}
+.degreeBadgeCnt {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+}
+.influenceBadgeCnt {
+	display: block;
+	// position: absolute;
+	// top: 8px;
+	// left: 8px;
 }
