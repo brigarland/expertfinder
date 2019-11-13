@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="personCardCollectionRoot"
+>
+  <div
+    className="personCardRoot"
+  >
+    <div
+      className="personCardMain"
+      onClick={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+        }
+      }
+    >
+      <div
+        className="title"
+      >
+        Engineering
+         in 
+        Engineering
+        <span>
+          West
+           Region
+        </span>
+      </div>
+      <div
+        className="degreeBadgeCnt"
+      >
+        <div
+          className="degreeBadgeRoot"
+        >
+          <div
+            className="valueCnt"
+          >
+            1
+            <sup>
+              st
+            </sup>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="personCardFooter"
+    >
+      <div
+        className="influenceBadgeCnt"
+      >
+        <div
+          className="influenceBadgeRoot"
+        >
+          <div
+            className="IconCnt"
+          >
+            <img
+              alt="Influencer Score Icon"
+              height="25"
+              src="influence.svg"
+              width="25"
+            />
+          </div>
+          <div
+            className="valueCnt"
+          >
+            0.7
+          </div>
+        </div>
+      </div>
+      <div
+        className="checkBoxCnt"
+      >
+        <div
+          className="ms-Checkbox is-enabled root-49"
+        >
+          <input
+            aria-checked="false"
+            checked={false}
+            className="input-50"
+            id="checkbox-1"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="ms-Checkbox-label label-51"
+            htmlFor="checkbox-1"
+          >
+            <div
+              className="ms-Checkbox-checkbox checkbox-52"
+            >
+              <i
+                aria-hidden={true}
+                className="ms-Checkbox-checkmark checkmark-55"
+                data-icon-name="CheckMark"
+              />
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="personCardRoot"
+  >
+    <div
+      className="personCardMain"
+      onClick={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+        }
+      }
+    >
+      <div
+        className="title"
+      >
+        Research
+         in 
+        Research
+        <span>
+          North
+           Region
+        </span>
+      </div>
+      <div
+        className="degreeBadgeCnt"
+      >
+        <div
+          className="degreeBadgeRoot"
+        >
+          <div
+            className="valueCnt"
+          >
+            1
+            <sup>
+              st
+            </sup>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="personCardFooter"
+    >
+      <div
+        className="influenceBadgeCnt"
+      >
+        <div
+          className="influenceBadgeRoot"
+        >
+          <div
+            className="IconCnt"
+          >
+            <img
+              alt="Influencer Score Icon"
+              height="25"
+              src="influence.svg"
+              width="25"
+            />
+          </div>
+          <div
+            className="valueCnt"
+          >
+            0.8
+          </div>
+        </div>
+      </div>
+      <div
+        className="checkBoxCnt"
+      >
+        <div
+          className="ms-Checkbox is-enabled root-49"
+        >
+          <input
+            aria-checked="false"
+            checked={false}
+            className="input-50"
+            id="checkbox-2"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="ms-Checkbox-label label-51"
+            htmlFor="checkbox-2"
+          >
+            <div
+              className="ms-Checkbox-checkbox checkbox-52"
+            >
+              <i
+                aria-hidden={true}
+                className="ms-Checkbox-checkmark checkmark-55"
+                data-icon-name="CheckMark"
+              />
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

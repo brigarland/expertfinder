@@ -1,17 +1,18 @@
 import React, { memo, useState } from 'react'
 import { ExpertFilterPane } from './ExpertFilterPane'
 import { useEmployeeFilter } from '../../../hooks/useEmployeeFilter'
-import { CheckableEmployeeCard } from './CheckableEmployeeCard'
+// import { CheckableEmployeeCard } from './CheckableEmployeeCard'
 import { Employee } from '../../../api'
 import { useCurrentUser } from '../../../hooks/useCurrentUser'
 // import { ConnectionRequestActions } from './ConnectionRequestActions'
 import { ContentSection, PageSurface } from '../../Shared'
-import { PersonCard } from '../../PersonCard'
+// import { PersonCard } from '../../PersonCard'
+import { PersonCardCollection } from '../../PersonCardCollection'
 import styles from './FindExperts.module.scss'
 
 export const FindExperts: React.FC = memo(() => {
 	const [employees, handleFilterChanged] = useEmployeeFilter()
-	const [selectedEmployees, setSelectedEmployees] = useState<Employee[]>([])
+	const [selectedEmployees] = useState<Employee[]>([])
 	const currentUser = useCurrentUser()
 
 	return (
@@ -22,12 +23,13 @@ export const FindExperts: React.FC = memo(() => {
 			/>
 			<ContentSection headerText="Expert Results">
 				<div className={styles.employeesCnt}>
-					{employees
-						.filter(e => !!(e && e.email))
-						.filter(e => (currentUser ? e.email !== currentUser.email : true))
-						.map(e => (
-							<PersonCard key={e.id} person={e} />
-						))}
+					<PersonCardCollection
+						personItems={employees
+							.filter(e => !!(e && e.email))
+							.filter(e =>
+								currentUser ? e.email !== currentUser.email : true,
+							)}
+					/>
 				</div>
 			</ContentSection>
 			{/* <ConnectionRequestActions employees={selectedEmployees} /> */}
@@ -70,10 +72,10 @@ export const FindExperts: React.FC = memo(() => {
 	// )
 })
 
-const inTeams = () => {
-	try {
-		return window.self !== window.top
-	} catch (e) {
-		return true
-	}
-}
+// const inTeams = () => {
+// 	try {
+// 		return window.self !== window.top
+// 	} catch (e) {
+// 		return true
+// 	}
+// }

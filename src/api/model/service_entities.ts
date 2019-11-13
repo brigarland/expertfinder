@@ -62,7 +62,7 @@ export interface IPerson {
 	/**
 	 * The ExpertScore of this user, indicating how well they respond to requests
 	 */
-	rewardPoints: number
+	rewardPoints?: number
 }
 
 // TODO: Remove replaced by IPerson

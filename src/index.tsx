@@ -7,5 +7,5 @@ import 'office-ui-fabric-react/dist/css/fabric.css'
 import { loadCurrentUserData } from './loadCurrentUserData'
 
 loadCurrentUserData()
-initializeIcons()
+initializeIcons(undefined, { disableWarnings: true })
 ReactDOM.render(<App />, document.getElementById('root'))

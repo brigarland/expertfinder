@@ -1,4 +1,4 @@
-@import '../../styles/ColorPalette.scss';
+@import '../../../styles/ColorPalette.scss';
 
 .personCardRoot {
 	display: flex;
@@ -9,11 +9,17 @@
 	flex: 0 0 300px;
 	border-top: 3px solid $brand00;
 	margin: 0 16px 16px 0;
+	:global(.activeCard) {
+		background-color: $brand14;
+	}
 }
 .personCardMain {
 	position: relative;
 	padding: 10px 70px 14px 15px;
 	flex: 1;
+	&:hover {
+		background-color: $brand14;
+	}
 }
 .personCardFooter {
 	position: relative;

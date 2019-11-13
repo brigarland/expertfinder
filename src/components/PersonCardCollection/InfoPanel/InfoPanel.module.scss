@@ -1,0 +1,28 @@
+@import '../../../styles/ColorPalette.scss';
+
+.infoPanelRoot {
+	flex: 0 0 1255px;
+	background: $brand16;
+	margin-bottom: 16px;
+	padding: 20px 30px;
+}
+
+.attributeName {
+	font-size: 12px;
+	font-weight: bold;
+	flex: 1;
+	max-width: 40%;
+}
+
+.attributeContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.attributeValue {
+	font-size: 12px;
+	flex: 4;
+	flex-wrap: wrap;
+	max-width: 60%;
+}
