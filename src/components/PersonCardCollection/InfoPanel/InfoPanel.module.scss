@@ -1,28 +1,27 @@
 @import '../../../styles/ColorPalette.scss';
+@import '../../../styles/TeamsUIStyles.scss';
 
 .infoPanelRoot {
-	flex: 0 0 1255px;
-	background: $brand16;
+	flex: 0 0 1195px;
+	// background: $brand16;
+	background-color: $white;
+	border-top: 3px solid $brand00;
 	margin-bottom: 16px;
 	padding: 20px 30px;
 }
-
-.attributeName {
-	font-size: 12px;
-	font-weight: bold;
-	flex: 1;
-	max-width: 40%;
-}
-
 .attributeContainer {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
 }
-
+.attributeName {
+	flex: 0 0 80px;
+	color: $gray01;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 30px;
+}
 .attributeValue {
+	@extend %tagItemStyles;
+	flex: 1;
+	padding: 2px 0;
 	font-size: 12px;
-	flex: 4;
-	flex-wrap: wrap;
-	max-width: 60%;
 }

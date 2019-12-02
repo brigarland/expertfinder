@@ -1,0 +1,28 @@
+%tagPickerStyles {
+	:global(.ms-BasePicker-text) {
+		border-color: $gray10;
+		background: $gray10;
+	}
+	:global(.ms-TagItem) {
+		background: $brand00;
+	}
+	:global(.ms-TagItem-text) {
+		color: $white;
+	}
+	:global(.ms-TagItem-close) {
+		color: $white;
+		&:hover {
+			color: $white;
+			background: $brand04;
+		}
+	}
+}
+%tagItemStyles {
+	:global(.ms-TagItem) {
+		background: $brand00;
+		padding: 2px 0 4px;
+	}
+	:global(.ms-TagItem-text) {
+		color: $white;
+	}
+}

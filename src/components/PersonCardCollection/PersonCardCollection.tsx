@@ -36,13 +36,12 @@ export const PersonCardCollection: React.FC<IPersonCardCollectionProps> = memo(
 				setCardClasses(newCardClasses)
 				// InfoPanels
 				const infoTabsCount = Math.ceil(newCardClasses.length / rowLength),
-					infoTabIndex = Math.ceil(cardIndex / rowLength)
+					infoTabIndex = Math.floor(cardIndex / rowLength)
 				for (let i = 0; i < infoTabsCount; i++) {
 					newInfoPanelVis.push(
 						infoTabIndex === i && !clearClasses ? false : true,
 					)
 				}
-				console.log('newInfoPanelVis', newInfoPanelVis)
 				setInfoPanelVis(newInfoPanelVis)
 			},
 			[personItems, setCardClasses, setInfoPanelVis],
@@ -83,8 +82,6 @@ export const PersonCardCollection: React.FC<IPersonCardCollectionProps> = memo(
 						/>
 					)
 					if (rowLength % i) {
-						console.log('math: ', Math.ceil(i / rowLength) - 1)
-						console.log('item: ', infoPanelVis[Math.ceil(i / rowLength) - 1])
 						return (
 							<Fragment key={e.id + 1000}>
 								{card}
