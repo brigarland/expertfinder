@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react'
+import React, { memo, useState, useCallback } from 'react'
 import { Checkbox } from 'office-ui-fabric-react'
 import { IPerson } from '../../../api'
 import { DegreeBadge, InfluenceBadge } from '../../Badges'
@@ -22,9 +22,13 @@ export interface IPersonCardProps extends React.AllHTMLAttributes<HTMLElement> {
 	 * personCardMain classNames
 	 */
 	mainClassNames?: string
+	/**
+	 * Function to handle checkbox onChange
+	 */
+	onChangeCheckbox: (id: string, checked?: boolean) => void
 }
 export const PersonCard: React.FC<IPersonCardProps> = memo(
-	({ person, cardIndex, onClickCard, mainClassNames }) => {
+	({ person, cardIndex, onClickCard, mainClassNames, onChangeCheckbox }) => {
 		const { function: func, organization, region, pageRank } = person
 		const [checked, setChecked] = useState<boolean>(false)
 
@@ -33,6 +37,14 @@ export const PersonCard: React.FC<IPersonCardProps> = memo(
 		// 	return Math.floor(Math.random() * 6) + 1
 		// }, [])
 		const degree = 1
+
+		const handleCheckboxOnChange = useCallback(
+			(ev, isChecked) => {
+				onChangeCheckbox(person.id, isChecked)
+				setChecked(isChecked)
+			},
+			[person, setChecked, onChangeCheckbox],
+		)
 
 		return (
 			<div className={styles.personCardRoot}>
@@ -60,7 +72,7 @@ export const PersonCard: React.FC<IPersonCardProps> = memo(
 					<div className={styles.checkBoxCnt}>
 						<Checkbox
 							checked={checked}
-							onChange={() => setChecked(!checked)}
+							onChange={handleCheckboxOnChange}
 							styles={jsStyles.customCheckbox}
 						/>
 					</div>

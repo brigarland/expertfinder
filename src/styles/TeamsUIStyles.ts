@@ -17,6 +17,7 @@ export const TeamsUIStyles: ITeamsUIStyles = {
 			lineHeight: '1rem',
 			margin: '0 0 8px 0',
 			padding: 0,
+			width: '100%',
 		},
 	},
 }

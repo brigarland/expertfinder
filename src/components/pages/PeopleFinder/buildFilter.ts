@@ -1,6 +1,7 @@
 import {
 	Skill,
 	Project,
+	Org,
 	FilterExpression,
 	BooleanOperation,
 	FilterOperation,
@@ -8,13 +9,18 @@ import {
 } from '../../../api'
 
 export function buildFilter(
-	organization: string | undefined,
+	selectedOrgs: Org[],
 	selectedSkills: Skill[],
 	selectedProjects: Project[],
 ) {
 	const result: FilterExpression = {
 		op: BooleanOperation.AND,
 		clauses: [
+			...selectedSkills.map(o => ({
+				op: FilterOperation.Equals,
+				field: EmployeeFields.Organization,
+				value: o,
+			})),
 			...selectedSkills.map(s => ({
 				op: FilterOperation.Equals,
 				field: EmployeeFields.Skills,
@@ -26,14 +32,6 @@ export function buildFilter(
 				value: p,
 			})),
 		],
-	}
-
-	if (organization) {
-		result.clauses.push({
-			op: FilterOperation.Equals,
-			field: EmployeeFields.Organization,
-			value: organization,
-		})
 	}
 
 	return result

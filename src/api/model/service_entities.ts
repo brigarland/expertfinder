@@ -133,6 +133,7 @@ export interface Employee {
 	rewardPoints: number
 }
 
+export type Org = string
 export type Skill = string
 export type Project = string
 export type Topic = string

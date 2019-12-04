@@ -10,10 +10,14 @@ export interface IPersonCardCollectionProps
 	 * The main text string value
 	 */
 	personItems: IPerson[]
+	/**
+	 * Function to set the selected card ids as an array of strings
+	 */
+	handleCardSelection: (id: string, checked?: boolean) => void
 }
 
 export const PersonCardCollection: React.FC<IPersonCardCollectionProps> = memo(
-	({ personItems }) => {
+	({ personItems, handleCardSelection }) => {
 		const rowLength = 4
 
 		const [activeCard, setActiveCard] = useState<number>(-1)
@@ -79,6 +83,7 @@ export const PersonCardCollection: React.FC<IPersonCardCollectionProps> = memo(
 							person={e}
 							onClickCard={handleCardClick}
 							mainClassNames={cardClasses[i] || ''}
+							onChangeCheckbox={handleCardSelection}
 						/>
 					)
 					if (rowLength % i) {
