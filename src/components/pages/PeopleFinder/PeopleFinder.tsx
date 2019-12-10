@@ -17,7 +17,7 @@ export const PeopleFinder: React.FC = memo(() => {
 			setSelectedEmployees(
 				checked
 					? [...selectedEmployees, id]
-					: [selectedEmployees.filter(f => f !== id)],
+					: selectedEmployees.filter(f => f !== id),
 			)
 		},
 		[selectedEmployees, setSelectedEmployees],
