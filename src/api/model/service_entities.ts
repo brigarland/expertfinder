@@ -177,3 +177,13 @@ export interface InfluencerConnection {
 	responseTimeInHours: number
 	type?: string
 }
+
+export interface IConnectionRequest {
+	imageUrl?: string
+	imageInitials: string
+	name: string
+	title: 'Software Engineer'
+	company: 'In a meeting'
+	body: 'Available at 4:00pm'
+	requestType: 'Mentorship'
+}

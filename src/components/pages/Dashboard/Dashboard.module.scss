@@ -1,0 +1,37 @@
+.incomingMessages {
+	width: 600px;
+	height: 300px;
+	border: 2px solid black;
+	overflow: auto;
+	h3 {
+		text-align: center;
+	}
+}
+
+.dashboardRequest {
+	display: flex;
+	flex-direction: column;
+	border: 2px solid blue;
+	padding: 1rem;
+}
+
+.requestHeader {
+	display: flex;
+}
+
+.buttons {
+	display: flex;
+	justify-content: flex-end;
+
+	button {
+		margin-right: 1rem;
+	}
+
+	.acceptButton {
+		background-color: #6264a7;
+	}
+
+	.referButton {
+		background-color: #8b8cc7;
+	}
+}
