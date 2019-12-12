@@ -1,5 +1,4 @@
 import api from './api'
-import { getCurrentUser } from './ClientStorage'
 import store from './state'
 import {
 	receiveCurrentUser,
@@ -8,10 +7,12 @@ import {
 	receiveKudosToMe,
 	receiveKudosFromMe,
 } from './state/actions'
+import * as microsoftTeams from '@microsoft/teams-js'
 
 // TODO: this is pretty coarse. Don't use this as a normative example for data loading
 export function loadCurrentUserData() {
 	const login = getCurrentUser()
+	// console.log('login: ', login)
 	if (login) {
 		api.getExpertConnections(login).then(requests => {
 			const requestsMadeByMe = requests.filter(
@@ -35,5 +36,23 @@ export function loadCurrentUserData() {
 				store.dispatch(receiveCurrentUser(found))
 			}
 		})
+	}
+}
+
+const getCurrentUser = () => {
+	if (inTeams()) {
+		microsoftTeams.initialize()
+		microsoftTeams.getContext(context => {
+			return context.userPrincipalName
+		})
+	}
+	return 'amold@bpcs.com'
+}
+
+const inTeams = () => {
+	try {
+		return window.self !== window.top
+	} catch (e) {
+		return true
 	}
 }
