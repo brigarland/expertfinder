@@ -1,5 +1,6 @@
 export * from './ContentSection'
 export * from './PageSurface'
+export { Panel } from './Panel'
 export * from './Pill'
 export * from './SidePanel'
 export * from './TagPicker'

@@ -1,0 +1,45 @@
+.dashboardPanel {
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+
+	.panelHeader {
+		padding-top: 16px;
+		padding-bottom: 16px;
+		background: black;
+		color: white;
+		display: flex;
+		align-items: center;
+
+		padding-left: 24px;
+
+		font-size: 18px;
+
+		.icon {
+			padding-right: 12px;
+		}
+	}
+
+	.panelContent {
+		padding: 24px;
+	}
+
+	.panelFooter {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding-top: 16px;
+		padding-bottom: 16px;
+
+		font-weight: 500;
+		a {
+			text-decoration: none;
+			color: #605e5c;
+
+			.footerIcon {
+				vertical-align: middle;
+			}
+		}
+	}
+}
