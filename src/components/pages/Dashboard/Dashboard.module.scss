@@ -1,3 +1,9 @@
+.dashboardContainer {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
 .incomingMessages {
 	width: 600px;
 	height: 300px;
