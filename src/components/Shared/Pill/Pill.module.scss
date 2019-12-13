@@ -1,15 +1,17 @@
+@import '../../../styles/ColorPalette.scss';
+
 .pillRoot {
 	display: inline-block;
 }
 .pill {
 	display: flex;
-	background-color: #6264a7;
+	background-color: $brand00;
 	padding: 6px 18px 5px 7px;
 	margin: 5px;
 	font-size: 14px;
 	line-height: 16px;
 	border-radius: 16px;
-	color: #fff;
+	color: $white;
 }
 .IconCnt {
 	flex: 0;
