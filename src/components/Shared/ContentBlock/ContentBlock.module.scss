@@ -1,0 +1,52 @@
+@import '../../../styles/ColorPalette.scss';
+
+.contentBlockRoot {
+	flex: 1;
+	border: 1px solid $black;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0px 0px 6px rgba($black, 0.2);
+
+	.header {
+		display: flex;
+		flex: 0;
+		padding: 16px 24px;
+		background: $black;
+		color: $white;
+		font-size: 18px;
+		font-weight: 600;
+		.icon,
+		.iconImgCnt {
+			padding-right: 12px;
+		}
+	}
+
+	.content {
+		flex: 1;
+		padding: 24px;
+	}
+
+	.footer {
+		display: flex;
+		flex: 0;
+		justify-content: center;
+		padding: 16px;
+		font-weight: 600;
+		a {
+			text-decoration: none;
+			color: $gray03;
+		}
+		.linkCnt {
+			display: flex;
+			.linkTextCnt {
+				flex: 1;
+			}
+			.linkIconCnt {
+				flex: 0;
+				font-size: 10px;
+				line-height: 20px;
+				padding: 0 5px;
+			}
+		}
+	}
+}

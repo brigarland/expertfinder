@@ -1,7 +1,9 @@
 .pageRoot {
 	height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 .pageCnt {
+	flex: 1;
 	display: flex;
-	height: 100%;
 }

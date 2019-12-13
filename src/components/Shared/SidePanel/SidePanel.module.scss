@@ -1,13 +1,13 @@
+@import '../../../styles/ColorPalette.scss';
+
 .sidePanelRoot {
-	// flex: 0 0 23.571428571428573rem;
-	// max-width: 23.571428571428573rem;
 	flex: 0 0 330px;
 	max-width: 330px;
 	overflow: auto;
 }
 
 .sidePanelWrapper {
-	background-color: #ffffff;
+	background-color: $white;
 	border-color: transparent;
 	border-style: solid;
 	border-width: 0.14285714285714285rem;

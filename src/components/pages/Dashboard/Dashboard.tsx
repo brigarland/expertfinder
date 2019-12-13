@@ -1,34 +1,45 @@
 import React from 'react'
-
-import {
-	DetailsList,
-	DetailsListLayoutMode,
-	Selection,
-	SelectionMode,
-	IColumn,
-} from 'office-ui-fabric-react/lib/DetailsList'
-import { PageSurface, Panel } from '../../Shared'
-import MessageDisplay from './MessageDisplay'
+import { PageSurface, ContentBlock } from '../../Shared'
 import styles from './Dashboard.module.scss'
-import SkillsIcon from '../../../images/skills-icon.svg'
+// import SkillsIcon from '../../../images/skills-icon.svg'
 
 export const Dashboard: React.FC = () => {
 	return (
-		<PageSurface title="People Connector Dashboard">
-			<div className={styles.dashboardContainer}>
-				<div style={{ width: '372px' }}>
-					<Panel
-						// fabricIcon="ChevronDown"
-						customIcon={SkillsIcon}
-						title="Skills, Certifications, & Projects"
-						footerText="See All Kudos"
-						footerLink="#"
-						// width="372px"
-					>
-						Content
-					</Panel>
-				</div>
-				{/* <MessageDisplay title="Incoming Messages" /> */}
+		<PageSurface
+			title="People Connector Dashboard"
+			styles={{ padding: '14px' }}
+		>
+			<div className={styles.dashLeftAside}>
+				<ContentBlock
+					icon="Search"
+					headerText="Skills, Certifications, &amp; Projects"
+					footer={{
+						text: 'Find People',
+						link: '#',
+					}}
+				>
+					Content
+				</ContentBlock>
+			</div>
+			<div className={styles.dashCentralContent}>
+				<ContentBlock
+					icon="Search"
+					headerText="Skills, Certifications, &amp; Projects"
+					footer={{
+						text: 'See All Kudos',
+						link: '#',
+					}}
+				>
+					Content
+				</ContentBlock>
+			</div>
+			<div className={styles.dashRightAside}>
+				<ContentBlock
+					icon="Search"
+					headerText="Skills, Certifications, &amp; Projects"
+				>
+					Content
+				</ContentBlock>
 			</div>
 		</PageSurface>
 	)

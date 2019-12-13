@@ -1,43 +1,17 @@
-.dashboardContainer {
-	width: 100%;
+%stdPadding {
+	padding: 12px;
 	display: flex;
 	flex-direction: column;
 }
-
-.incomingMessages {
-	width: 600px;
-	height: 300px;
-	border: 2px solid black;
-	overflow: auto;
-	h3 {
-		text-align: center;
-	}
+.dashLeftAside {
+	@extend %stdPadding;
+	flex: 1;
 }
-
-.dashboardRequest {
-	display: flex;
-	flex-direction: column;
-	border: 2px solid blue;
-	padding: 1rem;
+.dashCentralContent {
+	@extend %stdPadding;
+	flex: 3;
 }
-
-.requestHeader {
-	display: flex;
-}
-
-.buttons {
-	display: flex;
-	justify-content: flex-end;
-
-	button {
-		margin-right: 1rem;
-	}
-
-	.acceptButton {
-		background-color: #6264a7;
-	}
-
-	.referButton {
-		background-color: #8b8cc7;
-	}
+.dashRightAside {
+	@extend %stdPadding;
+	flex: 1;
 }
