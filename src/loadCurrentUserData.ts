@@ -46,7 +46,7 @@ const getCurrentUser = () => {
 			return context.userPrincipalName
 		})
 	}
-	return 'amold@bpcs.com'
+	return 'bgarland@bpcs.com'
 }
 
 const inTeams = () => {
