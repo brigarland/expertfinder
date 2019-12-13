@@ -9,9 +9,52 @@
 }
 .dashCentralContent {
 	@extend %stdPadding;
+	display: flex;
+	flex-direction: column;
 	flex: 3;
+	.requestsCnt {
+		padding: 0 0 12px 0;
+		display: flex;
+		flex: 1;
+		.incomingCnt {
+			padding: 0 12px 0 0;
+			display: flex;
+			flex: 1;
+		}
+		.outgoingCnt {
+			padding: 0 0 0 12px;
+			display: flex;
+			flex: 1;
+		}
+	}
+	.kudosCnt {
+		padding: 12px 0 0 0;
+		display: flex;
+		flex: 1;
+	}
 }
 .dashRightAside {
 	@extend %stdPadding;
 	flex: 1;
+	.topCnt {
+		padding: 0 0 12px 0;
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		.profileCnt {
+			padding: 0 0 12px 0;
+			display: flex;
+			flex: 1;
+		}
+		.highlightCnt {
+			padding: 12px 0 0 0;
+			display: flex;
+			flex: 1;
+		}
+	}
+	.metricsCnt {
+		padding: 12px 0 0 0;
+		display: flex;
+		flex: 1;
+	}
 }
