@@ -1,21 +1,30 @@
-import React, { memo } from 'react'
-import styles from './PageSurface.module.scss'
+import React, { CSSProperties } from 'react'
+import scssStyles from './PageSurface.module.scss'
 import { Helmet } from 'react-helmet'
 
 export interface IPageSurfaceProps
 	extends React.AllHTMLAttributes<HTMLElement> {
 	/**
-	 * Header Text to go at top of Sidebar
+	 * Page title to show in browser tab
 	 */
 	title: string
+	/**
+	 * Inline styles for the root/container element
+	 */
+	styles?: CSSProperties
 }
-export const PageSurface: React.FC<IPageSurfaceProps> = memo(
-	({ title, children }) => (
-		<div className={styles.pageRoot} data-component-type="Surface">
-			<Helmet>
-				<title>{title}</title>
-			</Helmet>
-			<div className={styles.pageCnt}>{children}</div>
+
+export const PageSurface: React.FC<IPageSurfaceProps> = ({
+	title,
+	styles,
+	children,
+}) => (
+	<div className={scssStyles.pageRoot} data-component-type="Surface">
+		<Helmet>
+			<title>{title}</title>
+		</Helmet>
+		<div className={scssStyles.pageCnt} style={styles}>
+			{children}
 		</div>
-	),
+	</div>
 )
