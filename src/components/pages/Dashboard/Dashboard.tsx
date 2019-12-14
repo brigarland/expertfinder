@@ -1,7 +1,7 @@
 import React from 'react'
 import { PageSurface, ContentBlock } from '../../Shared'
+import { FindPeopleBlock } from './ContentBlocks'
 import styles from './Dashboard.module.scss'
-// import SkillsIcon from '../../../images/skills-icon.svg'
 
 export const Dashboard: React.FC = () => {
 	return (
@@ -18,7 +18,7 @@ export const Dashboard: React.FC = () => {
 						link: '#',
 					}}
 				>
-					Content
+					<FindPeopleBlock />
 				</ContentBlock>
 			</div>
 			<div className={styles.dashCentralContent}>
