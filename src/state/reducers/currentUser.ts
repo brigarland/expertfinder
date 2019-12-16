@@ -1,8 +1,8 @@
 import { Action } from 'redux-actions'
 import { RECEIVE_CURRENT_USER } from '../actions'
-import { Employee } from '../../api'
+import { IPerson } from '../../api'
 
-export type State = Employee | null
+export type State = IPerson | null
 
 export default function reduce(
 	state: State = null,

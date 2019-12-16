@@ -1,14 +1,14 @@
 import React, { memo, useState, useCallback } from 'react'
 import { SearchPanel } from './SearchPanel'
 import { SendRequestPanel } from './SendRequestPanel'
-import { useEmployeeFilter } from '../../../hooks/useEmployeeFilter'
+import { usePeopleFilter } from '../../../hooks/usePeopleFilter'
 import { useCurrentUser } from '../../../hooks/useCurrentUser'
 import { ContentSection, PageSurface, SidePanel } from '../../Shared'
 import { PersonCardCollection } from '../../PersonCardCollection'
 import styles from './PeopleFinder.module.scss'
 
 export const PeopleFinder: React.FC = memo(() => {
-	const [employees, handleFilterChanged] = useEmployeeFilter()
+	const [employees, handleFilterChanged] = usePeopleFilter()
 	const [selectedEmployees, setSelectedEmployees] = useState<string[]>([])
 	const currentUser = useCurrentUser()
 
