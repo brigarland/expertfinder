@@ -1,6 +1,6 @@
 import React from 'react'
 import { PageSurface, ContentBlock } from '../../Shared'
-import { FindPeopleBlock } from './ContentBlocks'
+import { FindPeopleBlock, IncomingRequestsBlock } from './ContentBlocks'
 import styles from './Dashboard.module.scss'
 
 export const Dashboard: React.FC = () => {
@@ -32,7 +32,7 @@ export const Dashboard: React.FC = () => {
 								link: '#',
 							}}
 						>
-							Content
+							<IncomingRequestsBlock />
 						</ContentBlock>
 					</div>
 					<div className={styles.outgoingCnt}>

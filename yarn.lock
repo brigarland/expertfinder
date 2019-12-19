@@ -1537,6 +1537,13 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
+"@uifabric/example-data@^7.0.2":
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@uifabric/example-data/-/example-data-7.0.2.tgz#65ff90084274e0ad2b18d3ceb26060f509cc4a02"
+  integrity sha512-Hi4mJ8IeCWNaHG+V5K98V/X4U18cDLZCzQcJKPLgWoPRaBsiyPwwSDMiviRnCoZlgUjztXzej2feBfB8/FDLKg==
+  dependencies:
+    tslib "^1.7.1"
+
 "@uifabric/foundation@^7.5.0":
   version "7.5.0"
   resolved "https://registry.yarnpkg.com/@uifabric/foundation/-/foundation-7.5.0.tgz#d36f15ef59edeaa8219f2b7d34f74c6d756f6622"

@@ -1,4 +1,4 @@
-import api from './api'
+import { demoUserInfo } from './hooks'
 import store from './state'
 import { receiveCurrentUser } from './state/actions'
 
@@ -6,16 +6,14 @@ import { receiveCurrentUser } from './state/actions'
 export function loadCurrentUserData() {
 	const login = getCurrentUser()
 	if (login) {
-		api.getPeople().then(employees => {
-			const found = employees.find(e => e.email === login)
-			console.log(found ? 'Found is true' : 'Found is false')
-			if (found) {
-				store.dispatch(receiveCurrentUser(found))
-			}
-		})
+		//Currently grabbing user infor from static data in hook file :P
+		const found = demoUserInfo.find(e => e.email === login)
+		if (found) {
+			store.dispatch(receiveCurrentUser(found))
+		}
 	}
 }
 
 const getCurrentUser = () => {
-	return 'bgarland@bpcs.com'
+	return 'jsmith@microsoft.com'
 }
