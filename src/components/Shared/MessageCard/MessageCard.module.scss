@@ -1,56 +1,60 @@
 @import '../../../styles/ColorPalette.scss';
 
-.contentBlockRoot {
-	flex: 1;
-	border: 1px solid $black;
+.messageCardRoot {
+	margin-bottom: 6px;
+	border: 1px solid $gray09;
 	display: flex;
 	flex-direction: column;
-	box-shadow: 0px 0px 6px rgba($black, 0.2);
-
-	.header {
-		display: flex;
-		flex: 0;
-		padding: 16px 24px;
-		background: $black;
-		color: $white;
-		font-size: 18px;
-		font-weight: 600;
-		line-height: 20px;
-		.icon,
-		.iconImgCnt {
-			padding-right: 12px;
-		}
-		.txtCnt {
-			line-height: 18px;
-		}
+	padding: 13px 14px;
+	&:last-child {
+		margin-bottom: 0;
 	}
-
-	.content {
-		flex: 1;
-		padding: 24px;
-	}
-
-	.footer {
+	.mcHeaderCnt {
 		display: flex;
-		flex: 0;
-		justify-content: center;
-		padding: 16px;
-		font-weight: 600;
-		a {
-			text-decoration: none;
+		// flex-direction: row;
+		flex: initial;
+		.mcPersonaCnt {
+			flex: initial;
+			padding-right: 8px;
+		}
+		.mcTitleCnt {
+			flex: auto;
+		}
+		.mcIconCnt {
+			flex: initial;
+		}
+		.titleTop {
+			display: flex;
+			align-items: baseline;
+			.nameCnt {
+				flex: initial;
+				font-size: 14px;
+				line-height: 15px;
+				padding-right: 5px;
+			}
+			.timeCnt {
+				flex: initial;
+				font-size: 10px;
+				line-height: 13px;
+				color: $gray04;
+			}
+		}
+		.titleBtm {
+			font-size: 12px;
+			line-height: 16px;
 			color: $gray03;
 		}
-		.linkCnt {
-			display: flex;
-			.linkTextCnt {
-				flex: 1;
-			}
-			.linkIconCnt {
-				flex: 0;
-				font-size: 10px;
-				line-height: 20px;
-				padding: 0 5px;
-			}
-		}
+	}
+	.mcBodyCnt {
+		flex: initial;
+		font-size: 12px;
+		line-height: 16px;
+		color: $gray04;
+		padding: 5px 0 5px 40px;
+	}
+	.mcFooter {
+		flex: initial;
+		// text-align: right;
+		padding-top: 5px;
 	}
 }

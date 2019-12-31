@@ -87,4 +87,10 @@ export const ColorPalette = {
 	neutralLight: '#eaeaea',
 	neutralLighter: '#f4f4f4',
 	neutralLighterAlt: '#f8f8f8',
+	// Teams Colors
+	gray09: '#edebe9',
+	// New Colors
+	influencerPrimary: '#ab825d',
+	expertPrimary: '#5dab75',
+	mentorPrimary: '#5da0ab',
 }

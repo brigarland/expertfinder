@@ -18,6 +18,9 @@
 		padding-bottom: 12px;
 	}
 }
+.badgeCnt {
+	padding-bottom: 12px;
+}
 .expertsCtaCard {
 	@extend %ctaCard;
 	border-top: 3px solid $expertPrimary;

@@ -127,6 +127,10 @@ export interface IMessage {
 	 */
 	date: Date
 	/**
+	 * Body of message (the actual message)
+	 */
+	messageBody: string
+	/**
 	 * Enum: Request, Kudo
 	 */
 	messageType: MessageType

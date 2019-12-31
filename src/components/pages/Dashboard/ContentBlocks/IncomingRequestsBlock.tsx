@@ -1,54 +1,53 @@
-import {
-	IMessage,
-	MessageType,
-	MessageContext,
-	MessageState,
-} from '../../../../api'
 import React from 'react'
-import { useUserInfo } from '../../../../hooks'
+import {
+	useCurrentUser,
+	useUserInfo,
+	useIncomingMessages,
+} from '../../../../hooks'
 import { MessageCard } from '../../../Shared'
+import { DefaultButton, PrimaryButton } from 'office-ui-fabric-react'
+import { FabricCustomStyles } from '../../../../styles'
 import styles from './IncomingRequestsBlock.module.scss'
 
-const demoMessages: IMessage[] = [
-	{
-		to: 'jsmith@microsoft.com',
-		from: 'cevans@microsoft.com',
-		date: new Date('December 12, 2019 13:16:00'),
-		messageType: MessageType.Request,
-		contextType: MessageContext.Mentor,
-		messageState: MessageState.Pending,
-	},
-	{
-		to: 'jsmith@microsoft.com',
-		from: 'kdagal@microsoft.com',
-		date: new Date('December 5, 2019 23:34:00'),
-		messageType: MessageType.Request,
-		contextType: MessageContext.Influencer,
-		messageState: MessageState.Pending,
-	},
-	{
-		to: 'jsmith@microsoft.com',
-		from: 'kwashington@microsoft.com',
-		date: new Date('November 27, 2019 03:23:00'),
-		messageType: MessageType.Request,
-		contextType: MessageContext.Expert,
-		messageState: MessageState.Pending,
-	},
-]
-
 export const IncomingRequestsBlock: React.FC = () => {
-	const personIds = demoMessages.map(f => f.from)
+	const currentUser = useCurrentUser()
+	const currentUserId = currentUser ? currentUser.id : ''
+	const incomingMessages = useIncomingMessages(currentUserId)
+	const personIds = incomingMessages.map(f => f.from)
 	const userInfo = useUserInfo(personIds)
-	// console.log('userInfo: ', userInfo)
 	return (
 		<div className={styles.incomingRequestsBlockRoot}>
-			{demoMessages.map((m, i) => {
+			{incomingMessages.map((m, i) => {
 				return (
 					<MessageCard
 						key={i}
 						message={m}
 						person={userInfo.find(f => f.id === m.from)}
-					/>
+					>
+						<div className={styles.btnsCnt}>
+							<div className={styles.btnCnt}>
+								<DefaultButton
+									text="Decline"
+									styles={FabricCustomStyles.smallButton}
+									onClick={() => console.log('Declined')}
+								/>
+							</div>
+							<div className={styles.btnCnt}>
+								<DefaultButton
+									text="Refer"
+									styles={FabricCustomStyles.smallButton}
+									onClick={() => console.log('Referred')}
+								/>
+							</div>
+							<div className={styles.btnCnt}>
+								<PrimaryButton
+									text="Accept"
+									styles={FabricCustomStyles.smallButton}
+									onClick={() => console.log('Accepted')}
+								/>
+							</div>
+						</div>
+					</MessageCard>
 				)
 			})}
 		</div>

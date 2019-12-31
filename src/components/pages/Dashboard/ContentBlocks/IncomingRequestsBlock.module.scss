@@ -1,0 +1,11 @@
+.btnsCnt {
+	display: flex;
+	justify-content: flex-end;
+}
+.btnCnt {
+	flex: initial;
+	margin-right: 5px;
+	&:last-child {
+		margin-right: 0;
+	}
+}

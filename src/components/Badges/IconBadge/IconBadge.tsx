@@ -1,8 +1,9 @@
 import React from 'react'
-import styles from './IconBadge.module.scss'
+// import styles from './IconBadge.module.scss'
 import expertSvg from './images/experts-icon.svg'
 import influencerSvg from './images/influencers-icon.svg'
 import mentorSvg from './images/mentors-icon.svg'
+import { jsStyles } from './IconBadge.styles'
 
 export enum BadgeIcon {
 	Expert = 'expert',
@@ -11,7 +12,7 @@ export enum BadgeIcon {
 }
 
 export enum BadgeSize {
-	Small = 25,
+	Small = 20,
 	Medium = 35,
 }
 
@@ -53,9 +54,10 @@ export const IconBadge: React.FC<IIconBadgeProps> = ({
 	size = BadgeSize.Small,
 }) => {
 	const { badgeIcon, defaultText, color } = badgeValues[icon]
+	const styles = jsStyles(color, size === BadgeSize.Small)
 	return (
-		<div className={styles.iconBadgeRoot}>
-			<div className={styles.iconCnt}>
+		<div>
+			<div style={styles.iconCnt}>
 				<img
 					src={badgeIcon}
 					height={size}
@@ -63,9 +65,7 @@ export const IconBadge: React.FC<IIconBadgeProps> = ({
 					alt={`${text || defaultText} icon`}
 				/>
 			</div>
-			<div className={styles.txtCnt} style={{ color: color }}>
-				{text}
-			</div>
+			<div style={styles.txtCnt}>{text}</div>
 		</div>
 	)
 }
