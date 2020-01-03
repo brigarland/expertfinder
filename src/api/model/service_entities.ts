@@ -115,6 +115,7 @@ export interface IMessage {
 	/**
 	 * Id of the user who recieved the message
 	 * TODO: Will replace email with number for security
+	 * null for hidden names
 	 */
 	to: string
 	/**
@@ -125,7 +126,7 @@ export interface IMessage {
 	/**
 	 * Date sent
 	 */
-	date: Date
+	date?: Date
 	/**
 	 * Body of message (the actual message)
 	 */

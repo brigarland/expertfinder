@@ -1,6 +1,12 @@
 import React from 'react'
 import { PageSurface, ContentBlock } from '../../Shared'
-import { FindPeopleBlock, IncomingRequestsBlock } from './ContentBlocks'
+import {
+	FindPeopleBlock,
+	IncomingRequestsBlock,
+	OutgoingRequestsBlock,
+	SuggestedKudosBlock,
+	ReceivedKudosBlock,
+} from './ContentBlocks'
 import styles from './Dashboard.module.scss'
 
 export const Dashboard: React.FC = () => {
@@ -44,7 +50,7 @@ export const Dashboard: React.FC = () => {
 								link: '#',
 							}}
 						>
-							Content
+							<OutgoingRequestsBlock />
 						</ContentBlock>
 					</div>
 				</div>
@@ -57,7 +63,16 @@ export const Dashboard: React.FC = () => {
 							link: '#',
 						}}
 					>
-						Content
+						<div className={styles.allKudosCnt}>
+							<div className={styles.suggestedKudosCnt}>
+								<h3>Send Kudos</h3>
+								<SuggestedKudosBlock />
+							</div>
+							<div className={styles.receivedKudosCnt}>
+								<h3>Received Kudos</h3>
+								<ReceivedKudosBlock />
+							</div>
+						</div>
 					</ContentBlock>
 				</div>
 			</div>

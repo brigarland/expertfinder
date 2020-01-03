@@ -75,11 +75,13 @@ export const MessageCard: React.FC<IMessageCardProps> = ({
 								color: contextColor,
 							}}
 						>
-							{person.name}
+							{person.name || '***************'}
 						</div>
-						<div className={styles.timeCnt}>
-							{moment(message.date.toString()).format('ddd MM/DD')}
-						</div>
+						{message.date && (
+							<div className={styles.timeCnt}>
+								{moment(message.date.toString()).format('ddd MM/DD')}
+							</div>
+						)}
 					</div>
 					<div
 						className={styles.titleBtm}

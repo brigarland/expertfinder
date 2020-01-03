@@ -2,48 +2,41 @@ import React from 'react'
 import {
 	useCurrentUser,
 	useUserInfo,
-	useIncomingMessages,
+	useSuggestedKudos,
 } from '../../../../hooks'
 import { MessageCard } from '../../../Shared'
 import { DefaultButton, PrimaryButton } from 'office-ui-fabric-react'
 import { FabricCustomStyles } from '../../../../styles'
 import styles from './MessageBlocks.module.scss'
 
-export const IncomingRequestsBlock: React.FC = () => {
+export const SuggestedKudosBlock: React.FC = () => {
 	const currentUser = useCurrentUser()
 	const currentUserId = currentUser ? currentUser.id : ''
-	const incomingMessages = useIncomingMessages(currentUserId)
-	const personIds = incomingMessages.map(f => f.from)
+	const suggestedKudos = useSuggestedKudos(currentUserId)
+	const personIds = suggestedKudos.map(f => f.to)
 	const userInfo = useUserInfo(personIds)
 	return (
 		<div>
-			{incomingMessages.map((m, i) => {
+			{suggestedKudos.map((m, i) => {
 				return (
 					<MessageCard
 						key={i}
 						message={m}
-						person={userInfo.find(f => f.id === m.from)}
+						person={userInfo.find(f => f.id === m.to)}
 					>
 						<div className={styles.btnsCnt}>
 							<div className={styles.btnCnt}>
 								<DefaultButton
-									text="Decline"
+									text="Edit"
 									styles={FabricCustomStyles.smallButton}
-									onClick={() => console.log('Declined')}
-								/>
-							</div>
-							<div className={styles.btnCnt}>
-								<DefaultButton
-									text="Refer"
-									styles={FabricCustomStyles.smallButton}
-									onClick={() => console.log('Referred')}
+									onClick={() => console.log('?...')}
 								/>
 							</div>
 							<div className={styles.btnCnt}>
 								<PrimaryButton
-									text="Accept"
+									text="Send"
 									styles={FabricCustomStyles.smallButton}
-									onClick={() => console.log('Accepted')}
+									onClick={() => console.log('Sending Kudos...')}
 								/>
 							</div>
 						</div>
