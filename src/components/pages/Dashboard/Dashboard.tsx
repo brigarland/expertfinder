@@ -1,12 +1,19 @@
 import React from 'react'
-import { PageSurface, ContentBlock } from '../../Shared'
+import {
+	DonutChart,
+	PageSurface,
+	ContentBlock,
+	MetricLabel,
+} from '../../Shared'
 import {
 	FindPeopleBlock,
 	IncomingRequestsBlock,
 	OutgoingRequestsBlock,
 	SuggestedKudosBlock,
 	ReceivedKudosBlock,
+	StatisticsBlock,
 } from './ContentBlocks'
+import { ColorPalette } from '../../../styles'
 import styles from './Dashboard.module.scss'
 
 export const Dashboard: React.FC = () => {
@@ -88,13 +95,33 @@ export const Dashboard: React.FC = () => {
 							icon="Certificate"
 							headerText="Skills, Certifications, &amp; Projects"
 						>
-							Content
+							<div className={styles.metricHighlightCnt}>
+								<div className={styles.chartCnt}>
+									<DonutChart
+										value={67}
+										strokeColor={ColorPalette.brand04}
+										textColor={ColorPalette.brand06}
+									/>
+								</div>
+								<div className={styles.labelCnt}>
+									<MetricLabel
+										highlightColor={ColorPalette.mentorPrimary}
+										footer={{
+											text: 'Learn More',
+											link: '#',
+										}}
+									>
+										67% of Contoso Marketing Managers have their Professional
+										Analytics Certification
+									</MetricLabel>
+								</div>
+							</div>
 						</ContentBlock>
 					</div>
 				</div>
 				<div className={styles.metricsCnt}>
 					<ContentBlock icon="Flow" headerText="Your Connections">
-						Content
+						<StatisticsBlock />
 					</ContentBlock>
 				</div>
 			</div>

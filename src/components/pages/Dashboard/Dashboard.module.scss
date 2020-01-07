@@ -54,6 +54,17 @@
 			flex: 1;
 		}
 	}
+	.metricHighlightCnt {
+		display: flex;
+		.chartCnt {
+			flex: initial;
+			padding-bottom: 18px;
+		}
+		.labelCnt {
+			padding: 10px 0 0 16px;
+			flex: auto;
+		}
+	}
 	.metricsCnt {
 		padding: 12px 0 0 0;
 		display: flex;

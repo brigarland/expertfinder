@@ -1,0 +1,24 @@
+.donutChartTrack {
+	fill: transparent;
+	stroke: #dae2e5;
+	stroke-width: 26;
+}
+.donutChartIndicator {
+	fill: transparent;
+	stroke: #009688;
+	stroke-width: 26;
+	stroke-dasharray: 0 10000;
+	transition: stroke-dasharray 0.3s ease;
+}
+
+.donutChart {
+	margin: 0 auto;
+	border-radius: 50%;
+	display: block;
+}
+.donutchartTextVal,
+.donutchartTextPercent {
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 32px;
+}

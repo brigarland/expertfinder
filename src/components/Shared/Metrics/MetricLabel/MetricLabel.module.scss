@@ -1,0 +1,33 @@
+@import '../../../../styles/ColorPalette.scss';
+
+.highlight {
+	margin-bottom: 5px;
+	border: 2px solid $gray02;
+	width: 23px;
+}
+.labelCnt {
+	font-size: 12px;
+	line-height: 16px;
+}
+.footer {
+	display: flex;
+	flex: initial;
+	padding: 16px 0;
+	font-weight: 600;
+	a {
+		text-decoration: none;
+		color: $gray03;
+	}
+	.linkCnt {
+		display: flex;
+		.linkTextCnt {
+			flex: auto;
+		}
+		.linkIconCnt {
+			flex: initial;
+			font-size: 10px;
+			line-height: 20px;
+			padding: 0 5px;
+		}
+	}
+}
