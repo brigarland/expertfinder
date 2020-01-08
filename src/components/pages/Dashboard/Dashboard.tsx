@@ -12,6 +12,7 @@ import {
 	SuggestedKudosBlock,
 	ReceivedKudosBlock,
 	StatisticsBlock,
+	ProfileBlock,
 } from './ContentBlocks'
 import { ColorPalette } from '../../../styles'
 import styles from './Dashboard.module.scss'
@@ -86,8 +87,8 @@ export const Dashboard: React.FC = () => {
 			<div className={styles.dashRightAside}>
 				<div className={styles.topCnt}>
 					<div className={styles.profileCnt}>
-						<ContentBlock icon="Contact" headerText="Profile">
-							Content
+						<ContentBlock icon="Contact">
+							<ProfileBlock />
 						</ContentBlock>
 					</div>
 					<div className={styles.highlightCnt}>

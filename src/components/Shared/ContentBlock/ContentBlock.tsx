@@ -16,7 +16,7 @@ export interface IContentBlockProps
 	/**
 	 * Text to show in the header bar of the component
 	 */
-	headerText: string
+	headerText?: string
 	/**
 	 * Content for the optional footer
 	 */
@@ -54,7 +54,7 @@ export const ContentBlock: React.FC<IContentBlockProps> = ({
 				<div className={styles.iconCnt} aria-hidden="true">
 					{renderIcon()}
 				</div>
-				<div className={styles.txtCnt}>{headerText}</div>
+				{headerText && <div className={styles.txtCnt}>{headerText}</div>}
 			</div>
 			<div className={styles.content}>{children}</div>
 			{footer && <ContentBlockFooter {...footer} />}
