@@ -111,4 +111,8 @@ export const ColorPalette = {
 	influencerPrimary: '#ab825d',
 	expertPrimary: '#5dab75',
 	mentorPrimary: '#5da0ab',
+	brandPrimaryAlt: '#437078',
+	brandSecondaryAlt: '#31484B',
+	brandTertiaryAlt: '#24373A',
+	green01: '#6BB700',
 }

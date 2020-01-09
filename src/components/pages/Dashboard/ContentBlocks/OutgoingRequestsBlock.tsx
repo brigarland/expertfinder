@@ -5,9 +5,7 @@ import {
 	useUserInfo,
 	useOutgoingMessages,
 } from '../../../../hooks'
-import { MessageCard } from '../../../Shared'
-import { DefaultButton, PrimaryButton } from 'office-ui-fabric-react'
-import { FabricCustomStyles } from '../../../../styles'
+import { MessageCard, PrimaryButton } from '../../../Shared'
 import styles from './MessageBlocks.module.scss'
 
 export const OutgoingRequestsBlock: React.FC = () => {
@@ -28,17 +26,18 @@ export const OutgoingRequestsBlock: React.FC = () => {
 						{m.messageState === MessageState.Accepted && (
 							<div className={styles.btnsCnt}>
 								<div className={styles.btnCnt}>
-									<DefaultButton
+									<PrimaryButton
 										text="Chat"
-										styles={FabricCustomStyles.smallButton}
 										onClick={() => console.log('Opening Teams Chat...')}
+										isSmall
+										isAlt
 									/>
 								</div>
 								<div className={styles.btnCnt}>
 									<PrimaryButton
 										text="Email"
-										styles={FabricCustomStyles.smallButton}
 										onClick={() => console.log('Opening Outlook...')}
+										isSmall
 									/>
 								</div>
 							</div>

@@ -6,7 +6,6 @@ import styles from './ProfileBlock.module.scss'
 
 export const ProfileBlock: React.FC = () => {
 	const currentUser = useCurrentUser()
-	console.log('currentUser', currentUser)
 	const friendlyName = (currentUser && currentUser.name) || 'Unknown'
 	const friendlyTitle = (currentUser && currentUser.function) || 'Unknown Title'
 	return (

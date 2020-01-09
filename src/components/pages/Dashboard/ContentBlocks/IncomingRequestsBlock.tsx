@@ -4,9 +4,7 @@ import {
 	useUserInfo,
 	useIncomingMessages,
 } from '../../../../hooks'
-import { MessageCard } from '../../../Shared'
-import { DefaultButton, PrimaryButton } from 'office-ui-fabric-react'
-import { FabricCustomStyles } from '../../../../styles'
+import { MessageCard, PrimaryButton, DefaultButton } from '../../../Shared'
 import styles from './MessageBlocks.module.scss'
 
 export const IncomingRequestsBlock: React.FC = () => {
@@ -23,27 +21,29 @@ export const IncomingRequestsBlock: React.FC = () => {
 						key={i}
 						message={m}
 						person={userInfo.find(f => f.id === m.from)}
+						disableFlag
 					>
 						<div className={styles.btnsCnt}>
 							<div className={styles.btnCnt}>
 								<DefaultButton
 									text="Decline"
-									styles={FabricCustomStyles.smallButton}
 									onClick={() => console.log('Declined')}
+									isSmall
 								/>
 							</div>
 							<div className={styles.btnCnt}>
-								<DefaultButton
+								<PrimaryButton
 									text="Refer"
-									styles={FabricCustomStyles.smallButton}
 									onClick={() => console.log('Referred')}
+									isAlt
+									isSmall
 								/>
 							</div>
 							<div className={styles.btnCnt}>
 								<PrimaryButton
 									text="Accept"
-									styles={FabricCustomStyles.smallButton}
 									onClick={() => console.log('Accepted')}
+									isSmall
 								/>
 							</div>
 						</div>

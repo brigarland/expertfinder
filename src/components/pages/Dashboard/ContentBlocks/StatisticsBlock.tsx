@@ -48,6 +48,7 @@ export const StatisticsBlock: React.FC = () => {
 				marker: {
 					enabled: false,
 				},
+				shadow: true,
 			},
 		},
 		series: [

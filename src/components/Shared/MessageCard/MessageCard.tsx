@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { IMessage, IPerson, unknownPerson, MessageContext } from '../../../api'
+import {
+	IMessage,
+	IPerson,
+	unknownPerson,
+	MessageContext,
+	MessageState,
+} from '../../../api'
 import { ColorPalette } from '../../../styles/ColorPalette'
 import { IconBadge, BadgeIcon } from '../../Badges'
+import { MessageCardFlag } from './MessageCardFlag'
 import { Persona, PersonaSize, PersonaPresence } from 'office-ui-fabric-react'
 import moment from 'moment'
 import styles from './MessageCard.module.scss'
@@ -16,15 +23,21 @@ export interface IMessageCardProps
 	 * Person info for the sender/recipient
 	 */
 	person?: IPerson
+	/**
+	 * set to true to disable flag
+	 */
+	disableFlag?: boolean
 }
 
 export const MessageCard: React.FC<IMessageCardProps> = ({
 	message,
 	person = unknownPerson,
+	disableFlag,
 	children,
 }) => {
 	const [contextColor, setContextColor] = useState<string>(ColorPalette.gray09)
 	const [contextIcon, setContextIcon] = useState<JSX.Element>(<></>)
+	const [bdColor, setBdColor] = useState<string>()
 
 	// TODO: Need to build a date formatter like outlook
 
@@ -47,13 +60,31 @@ export const MessageCard: React.FC<IMessageCardProps> = ({
 			default:
 				break
 		}
-	}, [message.contextType])
+		switch (message.messageState) {
+			case MessageState.Accepted:
+				setBdColor(ColorPalette.green01)
+				break
+			case MessageState.Declined:
+				setBdColor(ColorPalette.gray09)
+				break
+			case MessageState.Pending:
+				setBdColor(ColorPalette.gray06)
+				break
+			case MessageState.Suggested:
+				setBdColor(ColorPalette.gray09)
+				break
+			default:
+				setBdColor('')
+		}
+	}, [message.contextType, message.messageState])
 
 	return (
 		<div
 			className={styles.messageCardRoot}
 			style={{
+				borderColor: bdColor,
 				borderLeft: `3px solid ${contextColor}`,
+				marginTop: !bdColor || !!disableFlag ? 0 : '13px',
 			}}
 		>
 			<div className={styles.mcHeaderCnt}>
@@ -65,6 +96,7 @@ export const MessageCard: React.FC<IMessageCardProps> = ({
 						size={PersonaSize.size32}
 						presence={PersonaPresence.none}
 						hidePersonaDetails
+						initialsColor={contextColor}
 					/>
 				</div>
 				<div className={styles.mcTitleCnt}>
@@ -91,6 +123,7 @@ export const MessageCard: React.FC<IMessageCardProps> = ({
 			</div>
 			<div className={styles.mcBodyCnt}>{message.messageBody}</div>
 			<div className={styles.mcFooter}>{children}</div>
+			{!disableFlag && <MessageCardFlag messageState={message.messageState} />}
 		</div>
 	)
 }

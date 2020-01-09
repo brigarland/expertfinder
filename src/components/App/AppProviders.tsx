@@ -1,27 +1,16 @@
 import React, { memo } from 'react'
 import { Provider } from 'react-redux'
-import { Fabric } from 'office-ui-fabric-react'
+import { Customizations, Fabric } from 'office-ui-fabric-react'
 import store from '../../state'
 import { BrowserRouter } from 'react-router-dom'
-import {
-	TeamsThemeContext,
-	ThemeStyle,
-	getContext,
-} from 'msteams-ui-components-react'
+import { teamsTheme } from '../../themes'
 
 export const AppProviders: React.FC = memo(({ children }) => {
-	const context = getContext({
-		baseFontSize: 16,
-		style: ThemeStyle.Light,
-	})
+	Customizations.applySettings({ theme: teamsTheme })
 	return (
 		<BrowserRouter>
 			<Provider store={store}>
-				<Fabric>
-					<TeamsThemeContext.Provider value={context}>
-						{children}
-					</TeamsThemeContext.Provider>
-				</Fabric>
+				<Fabric>{children}</Fabric>
 			</Provider>
 		</BrowserRouter>
 	)

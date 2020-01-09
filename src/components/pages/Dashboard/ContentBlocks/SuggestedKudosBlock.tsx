@@ -4,9 +4,7 @@ import {
 	useUserInfo,
 	useSuggestedKudos,
 } from '../../../../hooks'
-import { MessageCard } from '../../../Shared'
-import { DefaultButton, PrimaryButton } from 'office-ui-fabric-react'
-import { FabricCustomStyles } from '../../../../styles'
+import { MessageCard, PrimaryButton } from '../../../Shared'
 import styles from './MessageBlocks.module.scss'
 
 export const SuggestedKudosBlock: React.FC = () => {
@@ -26,17 +24,18 @@ export const SuggestedKudosBlock: React.FC = () => {
 					>
 						<div className={styles.btnsCnt}>
 							<div className={styles.btnCnt}>
-								<DefaultButton
+								<PrimaryButton
 									text="Edit"
-									styles={FabricCustomStyles.smallButton}
 									onClick={() => console.log('?...')}
+									isSmall
+									isAlt
 								/>
 							</div>
 							<div className={styles.btnCnt}>
 								<PrimaryButton
 									text="Send"
-									styles={FabricCustomStyles.smallButton}
 									onClick={() => console.log('Sending Kudos...')}
+									isSmall
 								/>
 							</div>
 						</div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { IconBadge, BadgeIcon, BadgeSize } from '../../../Badges'
-import { PrimaryButton } from 'office-ui-fabric-react'
+// import { PrimaryButton } from 'office-ui-fabric-react'
+import { PrimaryButton } from '../../../Shared'
 import styles from './FindPeopleBlock.module.scss'
 
 export const FindPeopleBlock: React.FC = () => (
