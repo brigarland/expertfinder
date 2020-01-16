@@ -13,10 +13,16 @@ export function buildFilter(
 	selectedSkills: Skill[],
 	selectedProjects: Project[],
 ) {
+	if (
+		!selectedOrgs.length &&
+		!selectedSkills.length &&
+		!selectedProjects.length
+	)
+		return { op: BooleanOperation.AND, clauses: [] }
 	const result: FilterExpression = {
 		op: BooleanOperation.AND,
 		clauses: [
-			...selectedSkills.map(o => ({
+			...selectedOrgs.map(o => ({
 				op: FilterOperation.Equals,
 				field: EmployeeFields.Organization,
 				value: o,

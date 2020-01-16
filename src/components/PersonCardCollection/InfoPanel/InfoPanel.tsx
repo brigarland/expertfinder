@@ -21,7 +21,7 @@ export interface TagAttributeProps {
 
 export const InfoPanel: React.FC<IInfoPanelProps> = memo(
 	({ person, hidden = true }) => {
-		const { projects, skills, topics } = person
+		const { projects, skills } = person
 
 		return (
 			<div
@@ -33,7 +33,6 @@ export const InfoPanel: React.FC<IInfoPanelProps> = memo(
 			>
 				<TagAttribute name="Projects" value={projects} />
 				<TagAttribute name="Skills" value={skills} />
-				<TagAttribute name="Topics" value={topics} />
 			</div>
 		)
 	},

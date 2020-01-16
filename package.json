@@ -5,6 +5,7 @@
 	"dependencies": {
 		"@microsoft/teams-js": "^1.5.2",
 		"@types/classnames": "^2.2.9",
+		"@types/color": "^3.0.1",
 		"@types/jest": "^24.0.22",
 		"@types/lodash": "^4.14.136",
 		"@types/node": "^12.6.8",
@@ -22,6 +23,7 @@
 		"@types/redux-thunk": "^2.1.0",
 		"@uifabric/example-data": "^7.0.2",
 		"classnames": "^2.2.6",
+		"color": "^3.1.2",
 		"highcharts": "^8.0.0",
 		"highcharts-react-official": "^2.2.2",
 		"humanhash": "^1.0.4",

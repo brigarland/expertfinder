@@ -1,4 +1,5 @@
 import React, { memo } from 'react'
+import { ContentBlock } from '../.'
 import styles from './SidePanel.module.scss'
 
 export interface ISidePanelProps extends React.AllHTMLAttributes<HTMLElement> {
@@ -8,28 +9,19 @@ export interface ISidePanelProps extends React.AllHTMLAttributes<HTMLElement> {
 	headerText: string
 
 	/**
-	 * Text for Optional header at top of Grid
+	 * Optional icon either using Office UI Fabric React 'iconName' or a
+	 * valid SVG path
 	 */
-	blurbText?: string
+	icon?: string
 }
 
 export const SidePanel: React.FC<ISidePanelProps> = memo(
-	({ headerText, blurbText, children }) => {
+	({ headerText, icon, children }) => {
 		return (
 			<div className={styles.sidePanelRoot} role="navigation">
-				<div className={styles.sidePanelWrapper}>
-					<div className={styles.sidePanelCnt}>
-						<div className={styles.header}>
-							<span>{headerText}</span>
-						</div>
-						{blurbText && (
-							<div className={styles.blurb}>
-								<span>{blurbText}</span>
-							</div>
-						)}
-						<div className={styles.sidePanelContent}>{children}</div>
-					</div>
-				</div>
+				<ContentBlock icon={icon} headerText={headerText}>
+					{children}
+				</ContentBlock>
 			</div>
 		)
 	},

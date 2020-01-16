@@ -6,7 +6,7 @@ export interface IContentSectionProps
 	/**
 	 * Header Text to go at top of section
 	 */
-	headerText: string
+	headerText?: string
 }
 
 export const ContentSection: React.FC<IContentSectionProps> = memo(
@@ -14,9 +14,11 @@ export const ContentSection: React.FC<IContentSectionProps> = memo(
 		return (
 			<div className={styles.contentSectionRoot} role="main">
 				<div className={styles.contentSectionCnt}>
-					<div className={styles.header}>
-						<span>{headerText}</span>
-					</div>
+					{!!headerText && (
+						<div className={styles.header}>
+							<span>{headerText}</span>
+						</div>
+					)}
 					<div className={styles.contentSectionContent}>{children}</div>
 				</div>
 			</div>

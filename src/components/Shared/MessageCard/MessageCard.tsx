@@ -82,7 +82,7 @@ export const MessageCard: React.FC<IMessageCardProps> = ({
 		<div
 			className={styles.messageCardRoot}
 			style={{
-				borderColor: bdColor,
+				borderColor: !bdColor || !!disableFlag ? ColorPalette.gray09 : bdColor,
 				borderLeft: `3px solid ${contextColor}`,
 				marginTop: !bdColor || !!disableFlag ? 0 : '13px',
 			}}

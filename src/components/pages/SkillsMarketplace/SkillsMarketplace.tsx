@@ -12,9 +12,6 @@ import { useSkillsSearch, useTripwire, useUserSkills } from '../../../hooks'
 import styles from './SkillsMarketplace.module.scss'
 
 export const SkillsMarketplace: React.FC = memo(() => {
-	const blurbText =
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-
 	const [interacted, markInteracted] = useTripwire()
 	const [userSkills, setUserSkills] = useState<string[]>([])
 	const [skillsSearchValue, setSkillsSearchValue] = useState<string>('')
@@ -42,7 +39,7 @@ export const SkillsMarketplace: React.FC = memo(() => {
 
 	return (
 		<PageSurface title="Skills Marketplace">
-			<SidePanel headerText="Edit Your Skills" blurbText={blurbText}>
+			<SidePanel headerText="Edit Your Skills">
 				<div className="searchFieldCnt">
 					<Input
 						autoFocus

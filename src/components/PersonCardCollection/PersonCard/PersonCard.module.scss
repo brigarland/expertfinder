@@ -10,7 +10,7 @@
 	border-top: 3px solid $brand00;
 	margin: 0 16px 16px 0;
 	:global(.activeCard) {
-		background-color: $brand14;
+		background-color: $gray09;
 	}
 }
 .personCardMain {
@@ -18,14 +18,14 @@
 	padding: 10px 70px 14px 15px;
 	flex: 1;
 	&:hover {
-		background-color: $brand14;
+		background-color: $gray09;
 	}
 }
 .personCardFooter {
 	position: relative;
 	flex: 0;
 	min-height: 35px;
-	background-color: $brand00;
+	background-color: lighten($gray03, 20%);
 }
 .title {
 	color: #4e586a;

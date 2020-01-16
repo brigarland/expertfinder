@@ -1,7 +1,6 @@
 export const jsStyles = {
 	messageTxtBox: {
-		minHeight: '140px',
-		marginBottom: '10px',
+		height: '140px',
 	},
 	sendBtn: {
 		width: '100%',
