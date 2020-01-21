@@ -1,4 +1,5 @@
 import React from 'react'
+import * as microsoftTeams from '@microsoft/teams-js'
 import {
 	DonutChart,
 	PageSurface,
@@ -29,7 +30,10 @@ export const Dashboard: React.FC = () => {
 					headerText="Find People"
 					footer={{
 						text: 'Find People',
-						link: '#',
+						onClick: () =>
+							microsoftTeams.executeDeepLink(
+								'https://teams.microsoft.com/l/entity/97596332-5a53-45ec-b6ab-2b2c5ccf4b99/experts?webUrl=https://expertfinder-alpha-ux.azurewebsites.net/experts&label=People Finder&context={}',
+							),
 					}}
 				>
 					<FindPeopleBlock />

@@ -4,10 +4,10 @@ html * {
 		'sans-serif';
 }
 body {
-	position: fixed;
+	/* position: fixed; */
 	width: 100%;
-	height: 100vh;
-	overflow: hidden;
+	/* height: 100vh;
+	overflow: hidden; */
 	margin: 0;
 	box-sizing: border-box;
 }

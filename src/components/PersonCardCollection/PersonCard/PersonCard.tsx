@@ -32,6 +32,7 @@ export interface IPersonCardProps extends React.AllHTMLAttributes<HTMLElement> {
 	 */
 	customColor?: string
 }
+
 export const PersonCard: React.FC<IPersonCardProps> = ({
 	person,
 	cardIndex,

@@ -1,4 +1,5 @@
 import React from 'react'
+import * as microsoftTeams from '@microsoft/teams-js'
 import { MessageState } from '../../../../api'
 import {
 	useCurrentUser,
@@ -17,18 +18,20 @@ export const OutgoingRequestsBlock: React.FC = () => {
 	return (
 		<div>
 			{outgoingMessages.map((m, i) => {
+				const person = userInfo.find(f => f.id === m.to)
 				return (
-					<MessageCard
-						key={i}
-						message={m}
-						person={userInfo.find(f => f.id === m.to)}
-					>
+					<MessageCard key={i} message={m} person={person}>
 						{m.messageState === MessageState.Accepted && (
 							<div className={styles.btnsCnt}>
 								<div className={styles.btnCnt}>
 									<PrimaryButton
 										text="Chat"
-										onClick={() => console.log('Opening Teams Chat...')}
+										onClick={() =>
+											microsoftTeams.executeDeepLink(
+												`https://teams.microsoft.com/l/chat/0/0?users=${person &&
+													person.email}`,
+											)
+										}
 										isSmall
 										isAlt
 									/>
@@ -36,7 +39,11 @@ export const OutgoingRequestsBlock: React.FC = () => {
 								<div className={styles.btnCnt}>
 									<PrimaryButton
 										text="Email"
-										onClick={() => console.log('Opening Outlook...')}
+										onClick={() =>
+											microsoftTeams.executeDeepLink(
+												'mailto:bortega@example.com',
+											)
+										}
 										isSmall
 									/>
 								</div>

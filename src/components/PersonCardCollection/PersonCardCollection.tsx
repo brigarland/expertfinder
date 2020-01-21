@@ -52,13 +52,9 @@ export const PersonCardCollection: React.FC<IPersonCardCollectionProps> = ({
 			// InfoPanels
 			const infoTabsCount = Math.ceil(newCardClasses.length / rowLength),
 				infoTabIndex = Math.floor(cardIndex / rowLength)
-			console.log('infoTabsCount', infoTabsCount)
-			console.log('infoTabIndex', infoTabIndex)
 			for (let i = 0; i < infoTabsCount; i++) {
 				newInfoPanelVis.push(infoTabIndex === i && !clearClasses ? false : true)
 			}
-
-			console.log('newInfoPanelVis', newInfoPanelVis)
 			setInfoPanelVis(newInfoPanelVis)
 		},
 		[personItems, setCardClasses, setInfoPanelVis],
@@ -118,8 +114,6 @@ export const PersonCardCollection: React.FC<IPersonCardCollectionProps> = ({
 						customColor={customCardColor}
 					/>
 				)
-				// console.log(i, infoPanelVis[Math.ceil(i / rowLength) - 1])
-				console.log('i % rowLength', i % rowLength)
 				if (i % rowLength === 3 || persontItemsLength === i + 1) {
 					return (
 						<Fragment key={e.id + 1000}>

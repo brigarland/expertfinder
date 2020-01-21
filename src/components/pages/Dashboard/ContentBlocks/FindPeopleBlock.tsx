@@ -1,6 +1,6 @@
 import React from 'react'
+import * as microsoftTeams from '@microsoft/teams-js'
 import { IconBadge, BadgeIcon, BadgeSize } from '../../../Badges'
-// import { PrimaryButton } from 'office-ui-fabric-react'
 import { PrimaryButton } from '../../../Shared'
 import styles from './FindPeopleBlock.module.scss'
 
@@ -20,7 +20,11 @@ export const FindPeopleBlock: React.FC = () => (
 			<div className={styles.btnCnt}>
 				<PrimaryButton
 					text="Find Experts"
-					onClick={() => console.log('Find Experts Clicked!')}
+					onClick={() =>
+						microsoftTeams.executeDeepLink(
+							'https://teams.microsoft.com/l/entity/97596332-5a53-45ec-b6ab-2b2c5ccf4b99/experts?webUrl=https://expertfinder-alpha-ux.azurewebsites.net/experts&label=People Finder&context={}',
+						)
+					}
 				/>
 			</div>
 		</div>
@@ -38,7 +42,11 @@ export const FindPeopleBlock: React.FC = () => (
 			<div className={styles.btnCnt}>
 				<PrimaryButton
 					text="Find Influencers"
-					onClick={() => console.log('Find Experts Clicked!')}
+					onClick={() =>
+						microsoftTeams.executeDeepLink(
+							'https://teams.microsoft.com/l/entity/97596332-5a53-45ec-b6ab-2b2c5ccf4b99/experts?webUrl=https://expertfinder-alpha-ux.azurewebsites.net/experts&label=People Finder&context={}',
+						)
+					}
 				/>
 			</div>
 		</div>
@@ -57,7 +65,11 @@ export const FindPeopleBlock: React.FC = () => (
 			<div className={styles.btnCnt}>
 				<PrimaryButton
 					text="Find Mentors"
-					onClick={() => console.log('Find Experts Clicked!')}
+					onClick={() =>
+						microsoftTeams.executeDeepLink(
+							'https://teams.microsoft.com/l/entity/97596332-5a53-45ec-b6ab-2b2c5ccf4b99/experts?webUrl=https://expertfinder-alpha-ux.azurewebsites.net/experts&label=People Finder&context={}',
+						)
+					}
 				/>
 			</div>
 		</div>
