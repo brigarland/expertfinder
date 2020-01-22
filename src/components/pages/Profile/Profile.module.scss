@@ -1,0 +1,47 @@
+@import '../../../styles/ColorPalette.scss';
+
+%stdPadding {
+	padding: 12px;
+	display: flex;
+	// flex-direction: column;
+}
+.profileCnt {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.topSection {
+	@extend %stdPadding;
+	flex: 1;
+	.welcomeSection {
+		flex: 3;
+		padding: 0 12px 0 0;
+		display: flex;
+		flex-direction: column;
+	}
+	.profileBaseSection {
+		flex: 1;
+		padding: 0 0 0 12px;
+		display: flex;
+	}
+}
+.btmSection {
+	@extend %stdPadding;
+	flex: 2;
+	.skillsSection {
+		padding: 0 12px 0 0;
+		display: flex;
+		flex: 1;
+	}
+	.projectsSection {
+		padding: 0 12px;
+		display: flex;
+		flex: 1;
+	}
+	.certsSection {
+		padding: 0 0 0 12px;
+		display: flex;
+		flex: 1;
+	}
+}

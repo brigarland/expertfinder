@@ -21,6 +21,18 @@
 		.iconImgCnt {
 			padding-right: 12px;
 		}
+		.iconImgCnt {
+			position: relative;
+			height: 22px;
+			width: 26px;
+			.iconImg {
+				position: absolute;
+				height: 26px;
+				width: 26px;
+				top: -4px;
+				left: 0px;
+			}
+		}
 		.txtCnt {
 			line-height: 18px;
 		}

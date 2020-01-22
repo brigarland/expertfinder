@@ -1,0 +1,51 @@
+@import '../../../../styles/ColorPalette.scss';
+
+.profileBlockRoot {
+	position: relative;
+	.personaCnt {
+		position: absolute;
+		top: -100px;
+		left: calc(50% - 72px);
+	}
+	.personaWrapper {
+		border: 12px solid $black;
+		border-radius: 50%;
+		:global {
+			.ms-Persona {
+				transform: scale(1.05);
+			}
+		}
+	}
+	.textCnt {
+		text-align: center;
+		padding-top: 56px;
+		.nameCnt {
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 24px;
+		}
+		.titleCnt {
+			font-size: 12px;
+			line-height: 16px;
+		}
+	}
+	.badgesCnt {
+		display: flex;
+		padding: 12px 45px 20px;
+		.badgeCnt {
+			flex: auto;
+			text-align: center;
+		}
+	}
+	.tempBadge {
+		margin: 0 auto;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		font-size: 8px;
+		color: #fff;
+		line-height: 38px;
+		text-align: center;
+		background: #000;
+	}
+}
