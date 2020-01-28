@@ -1,7 +1,7 @@
 import React from 'react'
 import { SectionHeader } from '../../../Shared'
 import { ColorPalette } from '../../../../styles'
-import welcomeImage from '../images/recruiter-searching-cropped-01.svg'
+import welcomeImage from '../images/recruiter-searching-cropped.png'
 import styles from './WelcomeBlock.module.scss'
 
 // export enum WelcomeImages {

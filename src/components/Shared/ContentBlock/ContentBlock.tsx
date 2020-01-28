@@ -21,12 +21,17 @@ export interface IContentBlockProps
 	 * Content for the optional footer
 	 */
 	footer?: IContentBlockFooterProps
+	/**
+	 * disables default padding in content section
+	 */
+	disablePadding?: boolean
 }
 
 export const ContentBlock: React.FC<IContentBlockProps> = ({
 	icon,
 	headerText,
 	footer,
+	disablePadding,
 	children,
 }) => {
 	const renderIcon = () => {
@@ -56,7 +61,12 @@ export const ContentBlock: React.FC<IContentBlockProps> = ({
 				</div>
 				{headerText && <div className={styles.txtCnt}>{headerText}</div>}
 			</div>
-			<div className={styles.content}>{children}</div>
+			<div
+				className={styles.content}
+				style={{ padding: disablePadding ? 0 : '24px' }}
+			>
+				{children}
+			</div>
 			{footer && <ContentBlockFooter {...footer} />}
 		</div>
 	)

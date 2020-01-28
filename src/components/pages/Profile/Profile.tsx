@@ -2,7 +2,12 @@ import React from 'react'
 import { IPerson } from '../../../api'
 import { PageSurface, ContentBlock } from '../../Shared'
 import { useCurrentUser } from '../../../hooks'
-import { ProfileBlock, WelcomeBlock } from './ContentBlocks'
+import {
+	ProfileBlock,
+	WelcomeBlock,
+	CertsBlock,
+	ProjectsBlock,
+} from './ContentBlocks'
 import skillsIcon from './images/skills-icon.svg'
 import projectsIcon from './images/projects-icon-01.svg'
 import certsIcon from './images/certifications-icon-01.svg'
@@ -35,18 +40,30 @@ export const Profile: React.FC = () => {
 				</div>
 				<div className={styles.btmSection}>
 					<div className={styles.skillsSection}>
-						<ContentBlock icon={skillsIcon} headerText="My Skills">
+						<ContentBlock
+							icon={skillsIcon}
+							headerText="My Skills"
+							disablePadding
+						>
 							Content
 						</ContentBlock>
 					</div>
 					<div className={styles.projectsSection}>
-						<ContentBlock icon={projectsIcon} headerText="My Projects">
-							Content
+						<ContentBlock
+							icon={projectsIcon}
+							headerText="My Projects"
+							disablePadding
+						>
+							<ProjectsBlock />
 						</ContentBlock>
 					</div>
 					<div className={styles.certsSection}>
-						<ContentBlock icon={certsIcon} headerText="My Certifications">
-							Content
+						<ContentBlock
+							icon={certsIcon}
+							headerText="My Certifications"
+							disablePadding
+						>
+							<CertsBlock />
 						</ContentBlock>
 					</div>
 				</div>

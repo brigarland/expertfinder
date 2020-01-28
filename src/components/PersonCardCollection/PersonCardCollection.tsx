@@ -103,6 +103,8 @@ export const PersonCardCollection: React.FC<IPersonCardCollectionProps> = ({
 	return (
 		<div className={styles.personCardCollectionRoot}>
 			{personItems.map((e, i) => {
+				console.log('persontItemsLength', persontItemsLength)
+				console.log('i', i)
 				const card = (
 					<PersonCard
 						key={e.id}
@@ -115,6 +117,7 @@ export const PersonCardCollection: React.FC<IPersonCardCollectionProps> = ({
 					/>
 				)
 				if (i % rowLength === 3 || persontItemsLength === i + 1) {
+					console.log('Inside If')
 					return (
 						<Fragment key={e.id + 1000}>
 							{card}

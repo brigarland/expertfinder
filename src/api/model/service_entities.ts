@@ -144,3 +144,53 @@ export interface IMessage {
 	 */
 	messageState: MessageState
 }
+
+export enum ProjectType {
+	BusinessDev = 'BusinessDev',
+	GlobalNetworking = 'GlobalNetworking',
+	Infrastructure = 'Infrastructure',
+}
+
+export interface IProject {
+	/**
+	 * Title of Project
+	 */
+	title: string
+	/**
+	 * Date project began
+	 */
+	startDate: Date
+	/**
+	 * Date project began - undefined if still active
+	 */
+	endDate?: Date
+	/**
+	 * Type of project
+	 */
+	type: ProjectType
+}
+
+export enum CertType {
+	Certification = 'Certification',
+	Accolade = 'Accolade',
+	Award = 'Award',
+}
+
+export interface ICert {
+	/**
+	 * Title of certification
+	 */
+	title: string
+	/**
+	 * Entity that issued the certification
+	 */
+	issuer: string
+	/**
+	 * Date certification was issued
+	 */
+	issueDate: Date
+	/**
+	 * Type of certification
+	 */
+	type: CertType
+}
