@@ -72,7 +72,7 @@ export const DonutChart: React.FC<IDonutChartProps> = ({
 			<text
 				className={styles.donutChartText}
 				x={halfsize}
-				y={valueLabel ? halfsize : halfsize * 1.13}
+				y={valueLabel ? halfsize : halfsize * 1.2}
 				style={{ textAnchor: 'middle' }}
 			>
 				<tspan className={styles.donutchartTextVal}>{value}</tspan>

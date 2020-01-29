@@ -6,9 +6,9 @@ export const jsStyles = (color: string, isSmall: boolean) => {
 		},
 		txtCnt: {
 			color: color,
-			fontSize: isSmall ? '10px' : '14px',
+			fontSize: isSmall ? '10px' : '18px',
 			fontWeight: 600,
-			lineHeight: '12px',
+			lineHeight: isSmall ? '12px' : '26px',
 		},
 	}
 }
