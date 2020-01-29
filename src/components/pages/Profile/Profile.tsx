@@ -7,6 +7,7 @@ import {
 	WelcomeBlock,
 	CertsBlock,
 	ProjectsBlock,
+	SkillsBlock,
 } from './ContentBlocks'
 import skillsIcon from './images/skills-icon.svg'
 import projectsIcon from './images/projects-icon-01.svg'
@@ -45,7 +46,7 @@ export const Profile: React.FC = () => {
 							headerText="My Skills"
 							disablePadding
 						>
-							Content
+							<SkillsBlock />
 						</ContentBlock>
 					</div>
 					<div className={styles.projectsSection}>

@@ -1,5 +1,5 @@
 export * from './CertsBlock'
 export * from './ProfileBlock'
 export * from './ProjectsBlock'
-// export * from './SkillsBlock'
+export * from './SkillsBlock'
 export * from './WelcomeBlock'

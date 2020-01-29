@@ -1,16 +1,16 @@
 import React, { memo } from 'react'
-import { Icon } from 'office-ui-fabric-react'
+import { IconButton } from 'office-ui-fabric-react'
 // import styles from './Pill.module.scss'
 import { jsStyles } from './Pill.styles'
 
-export enum PillIcon {
-	add = 'add',
-	remove = 'remove',
-	done = 'done',
+export enum PillType {
+	Default = 'Default',
+	Add = 'Add',
+	Suggestion = 'Suggestion',
 }
 export enum PillFill {
-	solid = 'solid',
-	border = 'border',
+	Solid = 'Solid',
+	Border = 'Border',
 }
 
 export interface IPillProps extends React.AllHTMLAttributes<HTMLElement> {
@@ -19,32 +19,99 @@ export interface IPillProps extends React.AllHTMLAttributes<HTMLElement> {
 	 */
 	text: string
 	/**
-	 * Icon of pill: add | remove | done (use PillIcon)
+	 * Type of pill: add | remove | done (use PillIcon)
 	 */
-	icon?: PillIcon
+	type?: PillType
 	/**
 	 * Color fill of pill: solid | border | done (use PillFill)
 	 */
 	fill?: PillFill
+	/**
+	 * Custom color of pill
+	 */
+	color?: string
+	/**
+	 * onClick Event for Delete
+	 */
+	onDelete?: (value: string) => void
+	/**
+	 * onClick Event for Add
+	 */
+	onAdd?: (value: string) => void
 }
 export const Pill: React.FC<IPillProps> = memo(
-	({ text, icon = PillIcon.done, fill = PillFill.solid }) => {
-		const isSolid = !!(fill === PillFill.solid)
-		const iconStr =
-			icon === PillIcon.add
-				? 'AddTo'
-				: icon === PillIcon.remove
-				? 'StatusCircleBlock'
-				: 'CheckMark'
-		const styles = jsStyles(isSolid, iconStr)
+	({
+		text,
+		type = PillType.Default,
+		fill,
+		color,
+		onDelete = () => {},
+		onAdd = () => {},
+	}) => {
+		const typeValues = {
+			Add: {
+				fill: PillFill.Border,
+				iconName: 'AddTo',
+				hasDelete: false,
+			},
+			Suggestion: {
+				fill: PillFill.Border,
+				iconName: 'AddTo',
+				hasDelete: true,
+			},
+			Default: {
+				fill: fill || PillFill.Solid,
+				iconName: undefined,
+				hasDelete: false,
+			},
+		}
+		const isSolid = !!(typeValues[type].fill === PillFill.Solid)
+		const styles = jsStyles(isSolid, color, type)
 
 		return (
 			<div style={styles.pillRoot}>
 				<div style={styles.pill}>
-					<div style={styles.iconCnt}>
-						<Icon iconName={iconStr} style={styles.icon} />
-					</div>
+					{typeValues[type].iconName && (
+						<div style={styles.iconCnt}>
+							<IconButton
+								iconProps={{
+									iconName: typeValues[type].iconName,
+									style: styles.icon,
+								}}
+								styles={{
+									root: {
+										height: 18,
+										width: 18,
+									},
+								}}
+								onClick={ev => onAdd(text)}
+							/>
+						</div>
+					)}
 					<div style={styles.textCnt}>{text}</div>
+					{typeValues[type].hasDelete && (
+						<div style={styles.deleteBtnCnt}>
+							<IconButton
+								iconProps={{
+									iconName: 'Cancel',
+									style: styles.icon,
+									styles: {
+										root: {
+											fontSize: 14,
+											lineHeight: 17,
+										},
+									},
+								}}
+								styles={{
+									root: {
+										height: 18,
+										width: 18,
+									},
+								}}
+								onClick={ev => onDelete(text)}
+							/>
+						</div>
+					)}
 				</div>
 			</div>
 		)
