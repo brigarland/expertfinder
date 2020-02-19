@@ -1,7 +1,0 @@
-export * from './FindPeopleBlock'
-export * from './IncomingRequestsBlock'
-export * from './OutgoingRequestsBlock'
-export * from './SuggestedKudosBlock'
-export * from './ReceivedKudosBlock'
-export * from './StatisticsBlock'
-export * from './ProfileBlock'
