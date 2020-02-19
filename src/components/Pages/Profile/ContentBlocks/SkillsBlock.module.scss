@@ -1,0 +1,23 @@
+@import '../../../../styles/ColorPalette.scss';
+
+.skillsBlockRoot {
+	.userSkillsCnt {
+		padding: 24px;
+	}
+	.addSkillsFormCnt {
+		border-top: 1px solid $gray09;
+		padding: 24px;
+	}
+	.suggestedSkillsCnt {
+		border-top: 1px solid $gray09;
+		padding: 24px;
+	}
+	.formHeader {
+		font-weight: 600;
+		font-size: 18px;
+		margin: 4px 0;
+	}
+	.searchResultsCnt {
+		margin-top: 8px;
+	}
+}
